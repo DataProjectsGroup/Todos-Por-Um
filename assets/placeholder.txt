@@ -1,7 +1,14 @@
-This folder should contain the following images:
-1. hero-bg.jpg - Hero section background image
-2. donation-bg.jpg - Donation section background image
-3. baby-shower.jpg - Baby Shower Program image
-4. financial-literacy.jpg - Youth Financial Literacy Program image
+Este diretório deve conter as seguintes imagens:
 
-Please replace with actual images for production use.
+1. logo.webp - Logo da organização "Todos Por Um Futuro Melhor"
+2. hero-bg.jpg - Imagem de fundo para a seção inicial 
+3. donation-bg.jpg - Imagem de fundo para a seção de doação
+4. projeto1.jpg e projeto2.jpg - Imagens para os projetos
+5. gallery1.jpg até gallery6.jpg - Imagens para a galeria de fotos
+   - As imagens fornecidas no briefing devem ser renomeadas e usadas aqui
+6. daniel.jpg - Foto do responsável Daniel Senna Strand
+
+Instruções:
+- Renomeie os arquivos de imagem recebidos seguindo esta nomenclatura
+- Certifique-se de que todas as imagens estão em formato adequado para web (tamanhos otimizados)
+- Substitua este arquivo de texto pelas imagens reais antes de publicar o site
