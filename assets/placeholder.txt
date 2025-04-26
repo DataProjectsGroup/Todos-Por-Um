@@ -1,0 +1,7 @@
+This folder should contain the following images:
+1. hero-bg.jpg - Hero section background image
+2. donation-bg.jpg - Donation section background image
+3. baby-shower.jpg - Baby Shower Program image
+4. financial-literacy.jpg - Youth Financial Literacy Program image
+
+Please replace with actual images for production use.
