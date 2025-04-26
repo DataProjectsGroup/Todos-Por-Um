@@ -1,0 +1,160 @@
+/* Estilos específicos para a página do estatuto */
+
+.estatuto-page {
+    padding: 140px 0 60px;
+    background-color: var(--background-color);
+}
+
+.estatuto-page h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.estatuto-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.estatuto-content h2 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin: 30px 0 10px;
+    text-align: center;
+}
+
+.estatuto-content h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.estatuto-content h4 {
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    margin: 25px 0 10px;
+}
+
+.estatuto-content h5 {
+    color: var(--dark-color);
+    font-size: 1.1rem;
+    margin: 0 0 15px;
+}
+
+.estatuto-content p {
+    margin-bottom: 15px;
+}
+
+.estatuto-content ol, 
+.estatuto-content ul {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.estatuto-content ol li, 
+.estatuto-content ul li {
+    margin-bottom: 8px;
+}
+
+.estatuto-content strong {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.estatuto-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.estatuto-footer {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.assinaturas {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.assinatura {
+    text-align: center;
+    flex: 1;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    margin: 0 20px;
+}
+
+.cargo {
+    font-weight: bold;
+}
+
+/* Estilos para impressão */
+@media print {
+    header, footer, .estatuto-actions {
+        display: none;
+    }
+    
+    .estatuto-page {
+        padding: 0;
+    }
+    
+    .estatuto-content {
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    h1 {
+        font-size: 16pt;
+    }
+    
+    h2 {
+        font-size: 14pt;
+    }
+    
+    h3, h4, h5 {
+        font-size: 13pt;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .estatuto-content {
+        padding: 20px;
+    }
+    
+    .estatuto-page h1 {
+        font-size: 1.6rem;
+    }
+    
+    .estatuto-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .estatuto-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .assinaturas {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .assinatura {
+        margin: 0;
+    }
+}
