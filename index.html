@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Deeds - Spread Joy, Empower Generations</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Charity Deeds Groups</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Missions <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#youth-financial">Youths Financial Literacy</a>
+                            <a href="#baby-shower">Baby Shower Program</a>
+                        </div>
+                    </li>
+                    <li><a href="#about">About us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Get Involved <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#volunteer">Volunteer</a>
+                            <a href="#donate">Donate</a>
+                        </div>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Our mission is simple:</h2>
+            <h3>Spread joy and empower generations.</h3>
+            <p>No individual should face barriers to experiencing pure joy in their life time. Our non-profit organization strives to provide a spark of joy and upliftment in the lives of those that needs it most.</p>
+            <a href="#donate" class="btn">Donate</a>
+        </div>
+    </section>
+
+    <section id="about" class="mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>Our mission is to spread joy and empower generations through our nonprofit organization. We are dedicated to creating positive and uplifting experiences that bring happiness, inspiration, and a sense of fulfillment to individuals of all ages.</p>
+            <p>By fostering a culture of joy, we aim to empower people to discover their potential, pursue their passions, and make a meaningful impact in their communities. Through our programs, events, and initiatives, we strive to create a ripple effect of positivity, resilience, and personal growth that transcends generations.</p>
+            <p>Together, we are igniting joy and empowering future generations to lead lives of purpose and fulfillment.</p>
+            <a href="#donate" class="btn">Donate</a>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container">
+            <h2>Projects we are focusing on</h2>
+            <div class="project-grid">
+                <div class="project" id="baby-shower">
+                    <h3>Baby Shower Program</h3>
+                    <div class="project-image">
+                        <img src="assets/baby-shower.jpg" alt="Baby Shower Program">
+                    </div>
+                    <p>Our mission is to celebrate and support expectant parents through our Baby Shower Program. We aim to create a nurturing and joyful environment where parents-to-be receive essential resources, guidance, and community connections. Our goal is to ensure every baby and family starts their journey with love, care, and the necessary support to thrive.</p>
+                    <a href="#" class="btn-secondary">Read more</a>
+                </div>
+                <div class="project" id="youth-financial">
+                    <h3>Youths Financial Literacy</h3>
+                    <div class="project-image">
+                        <img src="assets/financial-literacy.jpg" alt="Youth Financial Literacy">
+                    </div>
+                    <p>Our mission is to equip young individuals with the knowledge and skills necessary to achieve financial literacy and empower them to make informed financial decisions. Through our Youth Financial Literacy Program, we strive to provide comprehensive education, resources, and practical tools that enable youth to understand budgeting, savings, investments, and responsible financial practices.</p>
+                    <a href="#" class="btn-secondary">Read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="container">
+            <h2>Our partners</h2>
+            <div class="partner-logos">
+                <!-- Partner logos would go here -->
+                <div class="partner-logo placeholder"></div>
+                <div class="partner-logo placeholder"></div>
+                <div class="partner-logo placeholder"></div>
+            </div>
+            <a href="#donate" class="btn">Donate</a>
+        </div>
+    </section>
+
+    <section id="donate" class="donation">
+        <div class="container">
+            <h2>Make a Donation</h2>
+            <p>Your support helps us continue our mission to spread joy and empower generations.</p>
+            <div class="donation-form">
+                <form>
+                    <div class="form-group">
+                        <label for="amount">Donation Amount</label>
+                        <div class="amount-options">
+                            <button type="button" class="amount-btn">$25</button>
+                            <button type="button" class="amount-btn">$50</button>
+                            <button type="button" class="amount-btn active">$100</button>
+                            <button type="button" class="amount-btn">$200</button>
+                            <button type="button" class="amount-btn">Other</button>
+                        </div>
+                        <input type="number" id="amount" name="amount" placeholder="Custom Amount" value="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment">Payment Method</label>
+                        <select id="payment" name="payment">
+                            <option value="credit">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="bank">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Donate Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="volunteer" class="volunteer">
+        <div class="container">
+            <h2>Volunteer With Us</h2>
+            <p>Join our team of dedicated volunteers making a difference in the community.</p>
+            <div class="volunteer-form">
+                <form>
+                    <div class="form-group">
+                        <label for="volunteer-name">Full Name</label>
+                        <input type="text" id="volunteer-name" name="volunteer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteer-email">Email</label>
+                        <input type="email" id="volunteer-email" name="volunteer-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteer-phone">Phone</label>
+                        <input type="tel" id="volunteer-phone" name="volunteer-phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteer-interest">Area of Interest</label>
+                        <select id="volunteer-interest" name="volunteer-interest">
+                            <option value="baby-shower">Baby Shower Program</option>
+                            <option value="financial-literacy">Youth Financial Literacy</option>
+                            <option value="fundraising">Fundraising</option>
+                            <option value="general">General Support</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>CHARITY DEEDS GROUPS, INC.</h3>
+                    <p>info@charitydeeds.org</p>
+                    <p>501(c)3 Nonprofit Organization</p>
+                </div>
+                <div class="footer-quote">
+                    <p>"Spread joy, empower generations, and create a world where every individual thrives."</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Charity Deeds Groups, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
