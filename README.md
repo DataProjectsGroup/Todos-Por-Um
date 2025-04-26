@@ -1,73 +1,80 @@
-# Charity Donation Website
+# Todos Por Um Futuro Melhor
 
-A modern and responsive donation website for a charity organization based on the [Charity Deeds](https://www.charitydeeds.org/) template.
+Site oficial da organização "Todos Por Um Futuro Melhor", dedicada a erradicar a vulnerabilidade infanto-juvenil.
 
-## Features
+## Sobre o Projeto
 
-- Responsive design that works on all devices
-- Donation form with amount selection
-- Volunteer registration form
-- Information about charity programs and initiatives
-- Modern and clean UI design
+Este projeto visa oferecer acolhimento às crianças em situação de vulnerabilidade social irrestrita, independentemente de cor, raça, credo religioso, classe social, concepção político-partidária, filosófica ou nacionalidade.
 
-## Project Structure
+A ideia-base é promover assistência social, cultural, educação, saúde, segurança alimentar e o voluntariado. Como resultado, promover o desenvolvimento econômico e social e combate à pobreza, a ética, a paz, a cidadania, os direitos humanos e outros valores universais.
+
+## Estrutura do Projeto
 
 ```
-├── index.html          # Main HTML file
+├── index.html          # Página principal
 ├── css/
-│   └── styles.css      # Main stylesheet
+│   └── styles.css      # Estilos CSS
 ├── js/
-│   └── scripts.js      # JavaScript functionality
-└── assets/             # Images and other media files
+│   └── scripts.js      # Funcionalidades JavaScript
+└── assets/             # Imagens e mídia
 ```
 
-## Getting Started
+## Seções do Site
 
-1. Clone the repository:
+- **Início** - Apresentação da organização
+- **Institucional** - Informações sobre a instituição
+  - Quem Somos
+  - Nossa História
+  - Mídia
+  - Estatuto
+  - Projeto
+- **Nossas Fotos** - Galeria de fotos das atividades e eventos
+- **Doação** - Formulário para contribuições
+- **Contato** - Informações de contato
+
+## Iniciando o Projeto
+
+1. Clone o repositório:
 ```bash
 git clone https://github.com/DataProjectsGroup/Donation-Daniel.git
 cd Donation-Daniel
 ```
 
-2. Open `index.html` in your browser to view the website.
+2. Abra o arquivo `index.html` no seu navegador para visualizar o site.
 
-## Customization
+## Personalização
 
-To customize this website for a specific charity:
+Para personalizar este site:
 
-1. Replace placeholder text in `index.html` with your organization's information
-2. Add your organization's logo and images to the `assets/` folder
-3. Update colors and styles in `css/styles.css` to match your branding
-4. Modify the donation form in `index.html` to connect with your payment processor
+1. Substitua as imagens na pasta `assets/` com as imagens da sua organização
+2. Atualize as informações de contato em `index.html`
+3. Modifique cores e estilos em `css/styles.css` para corresponder à sua identidade visual
 
-## Required Images
+## Imagens Necessárias
 
-The website requires the following images to be added to the `assets/` folder:
+O site requer as seguintes imagens na pasta `assets/`:
 
-- `hero-bg.jpg` - Hero section background image
-- `donation-bg.jpg` - Donation section background image
-- `baby-shower.jpg` - Baby Shower Program image
-- `financial-literacy.jpg` - Youth Financial Literacy Program image
+- `logo.webp` - Logo da organização
+- `hero-bg.jpg` - Imagem de fundo para a seção inicial
+- `donation-bg.jpg` - Imagem de fundo para a seção de doação
+- `projeto1.jpg` e `projeto2.jpg` - Imagens para os projetos
+- `gallery1.jpg` até `gallery6.jpg` - Imagens para a galeria de fotos
+- `daniel.jpg` - Foto do responsável
 
-## Development
+## Responsável pelo Projeto
 
-To further develop this website:
+**Daniel Senna Strand**
+- Email: danielstrand@todospor1.org
+- Telefone: (11) 96610-5115
+- Bio: Advogado militante por 20 anos e agora lutando por um futuro melhor com crianças fora do trabalho e das ruas.
 
-1. Make changes to HTML, CSS, or JavaScript files
-2. Test your changes locally by opening `index.html` in a browser
-3. Commit and push your changes to the repository
-
-## Technologies Used
+## Tecnologias Utilizadas
 
 - HTML5
 - CSS3
 - JavaScript (ES6)
-- Font Awesome icons
+- Font Awesome (ícones)
 
-## License
+## Licença
 
-This project is open source and available for educational and non-commercial use.
-
-## Credits
-
-Design inspired by [Charity Deeds](https://www.charitydeeds.org/)
+Este projeto foi desenvolvido para a organização "Todos Por Um Futuro Melhor" e seu uso é exclusivo para este fim.
