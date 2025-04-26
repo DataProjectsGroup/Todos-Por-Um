@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Navigation scroll effect
+    // Efeito de rolagem na navegação
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         if (window.scrollY > 50) {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Smooth scrolling for anchor links
+    // Rolagem suave para links de âncora
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -28,22 +28,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Donation amount buttons
+    // Botões de valor de doação
     const amountBtns = document.querySelectorAll('.amount-btn');
     const amountInput = document.getElementById('amount');
 
     if (amountBtns && amountInput) {
         amountBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                // Remove active class from all buttons
+                // Remove a classe ativa de todos os botões
                 amountBtns.forEach(b => b.classList.remove('active'));
                 
-                // Add active class to clicked button
+                // Adiciona a classe ativa ao botão clicado
                 this.classList.add('active');
                 
-                // Set amount input value
-                const amount = this.textContent.replace('$', '');
-                if (amount !== 'Other') {
+                // Define o valor do input
+                const amount = this.textContent.replace('R$', '');
+                if (amount !== 'Outro') {
                     amountInput.value = amount;
                 } else {
                     amountInput.value = '';
@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Form submission handling
+    // Tratamento de envio do formulário de doação
     const donationForm = document.querySelector('.donation-form form');
     if (donationForm) {
         donationForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Collect form data
+            // Coleta os dados do formulário
             const formData = {
                 amount: document.getElementById('amount').value,
                 name: document.getElementById('name').value,
@@ -67,11 +67,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 payment: document.getElementById('payment').value
             };
             
-            // Here you would typically send this data to a server
-            // For this demo, we'll just show an alert
-            alert(`Thank you, ${formData.name}! Your donation of $${formData.amount} is being processed.`);
+            // Normalmente, você enviaria esses dados para um servidor
+            // Para esta demonstração, mostraremos apenas um alerta
+            let paymentMethod = '';
+            switch(formData.payment) {
+                case 'credit':
+                    paymentMethod = 'Cartão de Crédito';
+                    break;
+                case 'pix':
+                    paymentMethod = 'PIX';
+                    break;
+                case 'bank':
+                    paymentMethod = 'Transferência Bancária';
+                    break;
+                default:
+                    paymentMethod = formData.payment;
+            }
             
-            // Reset form
+            alert(`Obrigado, ${formData.name}! Sua doação de R$${formData.amount} está sendo processada via ${paymentMethod}.`);
+            
+            // Reseta o formulário
             this.reset();
             amountBtns.forEach(b => b.classList.remove('active'));
             document.querySelector('.amount-btn:nth-child(3)').classList.add('active');
@@ -79,26 +94,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Volunteer form handling
-    const volunteerForm = document.querySelector('.volunteer-form form');
-    if (volunteerForm) {
-        volunteerForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = {
-                name: document.getElementById('volunteer-name').value,
-                email: document.getElementById('volunteer-email').value,
-                phone: document.getElementById('volunteer-phone').value,
-                interest: document.getElementById('volunteer-interest').value
-            };
-            
-            // Here you would typically send this data to a server
-            // For this demo, we'll just show an alert
-            alert(`Thank you, ${formData.name}! We'll contact you soon about volunteering for our ${formData.interest.replace('-', ' ')} program.`);
-            
-            // Reset form
-            this.reset();
+    // Galeria de fotos com lightbox simples
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    
+    if (galleryItems.length > 0) {
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const lightbox = document.createElement('div');
+                lightbox.id = 'lightbox';
+                lightbox.style.position = 'fixed';
+                lightbox.style.top = '0';
+                lightbox.style.left = '0';
+                lightbox.style.width = '100%';
+                lightbox.style.height = '100%';
+                lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                lightbox.style.display = 'flex';
+                lightbox.style.alignItems = 'center';
+                lightbox.style.justifyContent = 'center';
+                lightbox.style.zIndex = '1000';
+                
+                const img = document.createElement('img');
+                img.src = this.src;
+                img.style.maxHeight = '90%';
+                img.style.maxWidth = '90%';
+                img.style.objectFit = 'contain';
+                img.style.border = '5px solid white';
+                
+                lightbox.appendChild(img);
+                document.body.appendChild(lightbox);
+                
+                lightbox.addEventListener('click', function() {
+                    document.body.removeChild(lightbox);
+                });
+            });
         });
     }
 });
