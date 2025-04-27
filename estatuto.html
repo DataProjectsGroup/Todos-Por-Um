@@ -3,163 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estatuto - Todos Por Um Futuro Melhor</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Estatuto - Associação de Doação</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estatuto.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <div class="logo">
-                <img src="assets/logo.webp" alt="Logo Todos Por Um Futuro Melhor">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li class="dropdown">
-                        <a href="#">Institucional <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="index.html#quem-somos">Quem Somos</a>
-                            <a href="index.html#nossa-historia">Nossa História</a>
-                            <a href="index.html#projeto">Projeto</a>
-                            <a href="estatuto.html">Estatuto</a>
-                        </div>
+            <a class="navbar-brand" href="index.html">Associação de Doação</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
                     </li>
-                    <li><a href="index.html#fotos">Nossas Fotos</a></li>
-                    <li><a href="index.html#donate">Doação</a></li>
-                    <li><a href="index.html#contact">Contato</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="estatuto.html">Estatuto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projetos.html">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
                 </ul>
-            </nav>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="estatuto-header">
+        <div class="container text-center">
+            <h1 class="estatuto-title">Estatuto da Associação</h1>
+            <p class="estatuto-subtitle">Normas e diretrizes que orientam nosso trabalho</p>
+            <button id="download-estatuto" class="btn-download">Baixar Estatuto (PDF)</button>
         </div>
     </header>
 
-    <section class="estatuto-section">
-        <div class="container">
-            <h1>Estatuto Social</h1>
-            <div class="document-actions">
-                <button onclick="window.print()" class="btn-print"><i class="fas fa-print"></i> Imprimir</button>
-                <button class="btn-download"><i class="fas fa-download"></i> Download PDF</button>
-            </div>
+    <!-- Main Content -->
+    <main class="estatuto-content">
+        <section>
+            <h2 id="secao1">CAPÍTULO I - DA DENOMINAÇÃO, SEDE E FINS</h2>
+            <p>Art. 1° - A Associação de Doação, também designada pela sigla AD, constituída em XX/XX/XXXX, é uma pessoa jurídica de direito privado, sem fins lucrativos, e duração por tempo indeterminado, com sede no município de São Paulo, Estado de São Paulo, e foro em São Paulo-SP.</p>
             
-            <div class="estatuto-content">
-                <h2>CAPÍTULO I - DA DENOMINAÇÃO, SEDE E FINS</h2>
-                <p>Art. 1º - A ASSOCIAÇÃO TODOS POR UM FUTURO MELHOR, também designada pela sigla TFM, constituída em 15 de abril de 2024, é uma pessoa jurídica de direito privado, sem fins lucrativos, e duração por tempo indeterminado, com sede no município de São Paulo, Estado de São Paulo, e foro em [ENDEREÇO COMPLETO].</p>
-                
-                <p>Art. 2º - A Associação tem por finalidades:</p>
-                <ol type="I">
-                    <li>Promover assistência social, educação e saúde para crianças e adolescentes em situação de vulnerabilidade;</li>
-                    <li>Desenvolver projetos de acolhimento, educacionais, culturais e esportivos;</li>
-                    <li>Trabalhar pela erradicação do trabalho infantil e proteção dos direitos das crianças e adolescentes;</li>
-                    <li>Proporcionar educação em tempo integral, cultura, esportes e instrução necessários às oportunidades do mundo moderno;</li>
-                    <li>Desenvolver o voluntariado e mobilizar a sociedade civil em prol da justiça social.</li>
-                </ol>
-                
-                <p>Art. 3º - No desenvolvimento de suas atividades, a Associação observará os princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e da eficiência, e não fará qualquer discriminação de origem, raça, sexo, cor, idade, credo religioso, classe social ou concepção político-partidária.</p>
-                
-                <h2>CAPÍTULO II - DOS ASSOCIADOS</h2>
-                <p>Art. 4º - A Associação é constituída por número ilimitado de associados, que serão admitidos a juízo da Diretoria, dentre pessoas idôneas, que serão classificados nas seguintes categorias:</p>
-                <ol type="I">
-                    <li>Fundadores: os que assinaram a ata de constituição;</li>
-                    <li>Contribuintes: os que contribuem financeiramente com a associação;</li>
-                    <li>Voluntários: os que prestam serviços voluntários à associação;</li>
-                    <li>Honorários: os que prestaram relevantes serviços à associação.</li>
-                </ol>
-                
-                <p>Art. 5º - São direitos dos associados:</p>
-                <ol type="I">
-                    <li>Participar das atividades da Associação;</li>
-                    <li>Tomar parte nas Assembleias Gerais;</li>
-                    <li>Votar e ser votado para os cargos eletivos, conforme requisitos do estatuto;</li>
-                    <li>Apresentar propostas, programas e projetos à Diretoria.</li>
-                </ol>
-                
-                <p>Art. 6º - São deveres dos associados:</p>
-                <ol type="I">
-                    <li>Cumprir as disposições estatutárias e regimentais;</li>
-                    <li>Acatar as decisões da Diretoria e da Assembleia Geral;</li>
-                    <li>Contribuir para a consecução dos objetivos da Associação;</li>
-                    <li>Zelar pelo bom nome da Associação.</li>
-                </ol>
-                
-                <h2>CAPÍTULO III - DA ADMINISTRAÇÃO</h2>
-                <p>Art. 7º - A Associação será administrada por:</p>
-                <ol type="I">
-                    <li>Assembleia Geral;</li>
-                    <li>Diretoria;</li>
-                    <li>Conselho Fiscal.</li>
-                </ol>
-                
-                <p>Art. 8º - A Assembleia Geral, órgão soberano da instituição, constituir-se-á dos associados em pleno gozo de seus direitos estatutários.</p>
-                
-                <p>Art. 9º - A Diretoria será constituída por:</p>
-                <ol type="I">
-                    <li>Presidente;</li>
-                    <li>Vice-Presidente;</li>
-                    <li>Secretário;</li>
-                    <li>Tesoureiro.</li>
-                </ol>
-                
-                <h2>CAPÍTULO IV - DAS FONTES DE RECURSOS</h2>
-                <p>Art. 10 - Constituem fontes de recursos da Associação:</p>
-                <ol type="I">
-                    <li>Contribuições de associados;</li>
-                    <li>Doações, legados e heranças;</li>
-                    <li>Rendimentos de aplicações de seus ativos financeiros;</li>
-                    <li>Receitas de prestação de serviços;</li>
-                    <li>Subvenções e auxílios de entidades públicas ou privadas;</li>
-                    <li>Outras receitas eventuais.</li>
-                </ol>
-                
-                <h2>CAPÍTULO V - DO PATRIMÔNIO</h2>
-                <p>Art. 11 - O patrimônio da Associação será constituído por bens móveis, imóveis, veículos, semoventes, ações e títulos da dívida pública.</p>
-                
-                <h2>CAPÍTULO VI - DAS DISPOSIÇÕES GERAIS</h2>
-                <p>Art. 12 - A Associação será dissolvida por decisão da Assembleia Geral Extraordinária, especialmente convocada para esse fim, quando se tornar impossível a continuação de suas atividades.</p>
-                
-                <p>Art. 13 - Em caso de dissolução da Associação, o patrimônio líquido será transferido a outra pessoa jurídica sem fins lucrativos, preferencialmente com o mesmo objetivo social.</p>
-                
-                <p>Art. 14 - O presente estatuto poderá ser reformado, em qualquer tempo, por decisão de 2/3 (dois terços) dos presentes à Assembleia Geral especialmente convocada para esse fim.</p>
-                
-                <p>Art. 15 - Os casos omissos serão resolvidos pela Diretoria e referendados pela Assembleia Geral.</p>
-                
-                <div class="estatuto-foot">
-                    <p>São Paulo, 15 de abril de 2024.</p>
-                    <p class="signature">Daniel Senna Strand<br>Presidente</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <p>Art. 2° - A Associação de Doação tem por finalidade:</p>
+            <ol>
+                <li>Promover a assistência social;</li>
+                <li>Contribuir para a erradicação da pobreza;</li>
+                <li>Promover ações que visem o bem-estar e desenvolvimento do ser humano;</li>
+                <li>Desenvolver atividades educacionais e culturais;</li>
+                <li>Promover o voluntariado e a solidariedade;</li>
+                <li>Desenvolver e executar projetos socioambientais.</li>
+            </ol>
+        </section>
 
-    <footer>
+        <section>
+            <h2 id="secao2">CAPÍTULO II - DOS SÓCIOS</h2>
+            <p>Art. 3° - A Associação é constituída por número ilimitado de sócios, distribuídos nas seguintes categorias:</p>
+            <ol>
+                <li><strong>Sócios Fundadores:</strong> aqueles que participaram da Assembleia de Constituição da Associação;</li>
+                <li><strong>Sócios Efetivos:</strong> pessoas físicas que colaboram efetivamente com as atividades da Associação;</li>
+                <li><strong>Sócios Colaboradores:</strong> pessoas físicas ou jurídicas que colaboram com a Associação mediante doações ou serviços voluntários;</li>
+                <li><strong>Sócios Honorários:</strong> pessoas físicas ou jurídicas que tenham prestado serviços relevantes à Associação.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2 id="secao3">CAPÍTULO III - DA ADMINISTRAÇÃO</h2>
+            <p>Art. 4° - A Associação será administrada pelos seguintes órgãos:</p>
+            <ol>
+                <li>Assembleia Geral;</li>
+                <li>Diretoria;</li>
+                <li>Conselho Fiscal.</li>
+            </ol>
+            
+            <h3>Da Assembleia Geral</h3>
+            <p>Art. 5° - A Assembleia Geral, órgão soberano da Associação, constituir-se-á dos sócios em pleno gozo de seus direitos estatutários.</p>
+            
+            <h3>Da Diretoria</h3>
+            <p>Art. 6° - A Diretoria será constituída por Presidente, Vice-Presidente, Secretário, Tesoureiro e Diretor Executivo.</p>
+            
+            <h3>Do Conselho Fiscal</h3>
+            <p>Art. 7° - O Conselho Fiscal será composto por três membros efetivos e três suplentes, eleitos pela Assembleia Geral.</p>
+        </section>
+        
+        <section>
+            <h2 id="secao4">CAPÍTULO IV - DOS RECURSOS FINANCEIROS</h2>
+            <p>Art. 8° - Os recursos financeiros necessários à manutenção da Associação poderão ser obtidos por:</p>
+            <ol>
+                <li>Contribuições de associados;</li>
+                <li>Doações de pessoas físicas e/ou jurídicas;</li>
+                <li>Rendimentos de aplicações de seus ativos financeiros;</li>
+                <li>Receitas de parcerias e convênios;</li>
+                <li>Outras receitas.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2 id="secao5">CAPÍTULO V - DAS DISPOSIÇÕES GERAIS</h2>
+            <p>Art. 9° - O presente estatuto poderá ser reformado, em qualquer tempo, por decisão da maioria absoluta dos sócios, em Assembleia Geral especialmente convocada para esse fim.</p>
+            
+            <p>Art. 10 - A Associação poderá ser extinta por deliberação da Assembleia Geral Extraordinária, especialmente convocada para esse fim, quando se tornar impossível a continuação de suas atividades.</p>
+            
+            <p>Art. 11 - Os casos omissos serão resolvidos pela Diretoria e referendados pela Assembleia Geral.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="estatuto-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>TODOS POR UM FUTURO MELHOR</h3>
-                    <div class="footer-logo">
-                        <img src="assets/logo.webp" alt="Logo Todos Por Um Futuro Melhor" width="120">
-                    </div>
-                    <p>Email: contato@todospor1.org</p>
-                    <p>Telefone: (11) 96610-5115</p>
-                    <p>Organização sem fins lucrativos</p>
-                </div>
-                <div class="footer-quote">
-                    <p>"Um por todos, todos por um. Unidos para erradicar a vulnerabilidade infanto-juvenil."</p>
-                </div>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Todos Por Um Futuro Melhor. Todos os direitos reservados.</p>
-            </div>
+            <p>© 2025 Associação de Doação. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/estatuto.js"></script>
 </body>
 </html>
