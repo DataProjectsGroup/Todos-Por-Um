@@ -1,56 +1,62 @@
+// JavaScript for Estatuto page
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Highlight active section in TOC when scrolling
-    const sections = document.querySelectorAll('.estatuto-section');
+    // Smooth scrolling for table of contents links
     const tocLinks = document.querySelectorAll('.toc-link');
     
-    window.addEventListener('scroll', function() {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            
-            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        tocLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // Smooth scrolling for TOC links
-    document.querySelectorAll('.toc-link').forEach(link => {
+    tocLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
             
-            window.scrollTo({
-                top: targetElement.offsetTop - 50,
-                behavior: 'smooth'
-            });
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+                
+                // Highlight the current section in TOC
+                tocLinks.forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            }
         });
     });
     
-    // Handle PDF download
-    document.getElementById('download-estatuto').addEventListener('click', function() {
-        // In a real application, this would link to an actual PDF file
-        alert('O download do estatuto em PDF iniciará em breve.');
+    // Highlight TOC item on scroll
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('.estatuto-section');
         
-        // Simulate download by creating a dummy PDF link
-        // In a production environment, replace with actual PDF file URL
-        const link = document.createElement('a');
-        link.href = 'assets/documents/estatuto.pdf';
-        link.download = 'Estatuto_Donation_Daniel.pdf';
-        link.target = '_blank';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            const sectionHeight = section.offsetHeight;
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                const id = section.getAttribute('id');
+                
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
     });
+    
+    // Download button functionality
+    const downloadButton = document.getElementById('downloadEstatuto');
+    
+    if (downloadButton) {
+        downloadButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Replace this with actual file path when available
+            alert('Funcionalidade de download do PDF será implementada em breve.');
+            
+            // Uncomment when a PDF file is available
+            // window.location.href = 'assets/documentos/estatuto.pdf';
+        });
+    }
 });
