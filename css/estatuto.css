@@ -1,72 +1,92 @@
 /* Estatuto Page Styles */
+.estatuto-container {
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 .estatuto-header {
-    background-color: #f8f9fa;
-    padding: 2rem 0;
+    text-align: center;
     margin-bottom: 2rem;
-    border-bottom: 1px solid #e9ecef;
 }
 
 .estatuto-header h1 {
-    font-size: 2.5rem;
-    color: #343a40;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .estatuto-header p {
-    font-size: 1.2rem;
-    color: #6c757d;
-}
-
-.estatuto-actions {
-    margin: 2rem 0;
-}
-
-.download-btn {
-    background-color: #0d6efd;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-}
-
-.download-btn:hover {
-    background-color: #0b5ed7;
-}
-
-.estatuto-content {
+    font-size: 1.1rem;
+    color: #666;
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 1rem;
+}
+
+/* Table of Contents */
+.estatuto-toc {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.estatuto-toc h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-list li {
+    margin-bottom: 0.5rem;
+}
+
+.toc-link {
+    display: block;
+    padding: 0.5rem 0;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    padding-left: 10px;
+}
+
+.toc-link:hover, .toc-link.active {
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    background-color: rgba(0,0,0,0.05);
+    padding-left: 15px;
+}
+
+/* Main Content */
+.estatuto-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .estatuto-section {
     margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #e9ecef;
-}
-
-.estatuto-section:last-child {
-    border-bottom: none;
+    scroll-margin-top: 80px; /* For smooth scrolling with fixed header */
 }
 
 .estatuto-section h2 {
-    font-size: 1.8rem;
-    color: #212529;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #0d6efd;
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .estatuto-section h3 {
-    font-size: 1.4rem;
-    color: #343a40;
-    margin: 1.5rem 0 1rem 0;
+    color: var(--secondary-color);
+    margin: 1.5rem 0 1rem;
 }
 
 .estatuto-section p {
@@ -75,7 +95,7 @@
 }
 
 .estatuto-section ul, .estatuto-section ol {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     padding-left: 2rem;
 }
 
@@ -84,54 +104,64 @@
     line-height: 1.6;
 }
 
-.estatuto-toc {
+/* Download Button */
+.download-container {
+    text-align: center;
     margin: 2rem 0;
-    padding: 1.5rem;
-    background-color: #f8f9fa;
-    border-radius: 0.5rem;
-    border: 1px solid #e9ecef;
 }
 
-.estatuto-toc h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-.estatuto-toc ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.estatuto-toc li {
-    margin-bottom: 0.75rem;
-}
-
-.estatuto-toc a {
-    color: #0d6efd;
+.download-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.estatuto-toc a:hover, .estatuto-toc a.active {
-    color: #0a58ca;
-    text-decoration: underline;
+.download-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Responsive adjustments */
+.download-btn i {
+    margin-right: 8px;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .estatuto-header h1 {
-        font-size: 2rem;
+    .estatuto-container {
+        padding: 1rem;
     }
     
-    .estatuto-header p {
-        font-size: 1rem;
+    .estatuto-content {
+        padding: 1.5rem;
     }
     
-    .estatuto-section h2 {
-        font-size: 1.5rem;
+    .estatuto-toc {
+        padding: 1rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar, .footer, .download-container {
+        display: none;
     }
     
-    .estatuto-section h3 {
-        font-size: 1.2rem;
+    .estatuto-container {
+        padding: 0;
+    }
+    
+    .estatuto-content {
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .estatuto-section {
+        page-break-inside: avoid;
     }
 }
