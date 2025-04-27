@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estatuto - Associação de Doação</title>
+    <title>Estatuto - Donation Daniel</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estatuto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Associação de Doação</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="Donation Daniel Logo" height="40">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,107 +25,163 @@
                         <a class="nav-link" href="index.html">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sobre.html">Sobre</a>
+                        <a class="nav-link" href="index.html#sobre">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="estatuto.html">Estatuto</a>
+                        <a class="nav-link" href="index.html#doar">Como Doar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="projetos.html">Projetos</a>
+                        <a class="nav-link active" href="estatuto.html">Estatuto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Contato</a>
+                        <a class="nav-link" href="index.html#contato">Contato</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="estatuto-header">
-        <div class="container text-center">
-            <h1 class="estatuto-title">Estatuto da Associação</h1>
-            <p class="estatuto-subtitle">Normas e diretrizes que orientam nosso trabalho</p>
-            <button id="download-estatuto" class="btn-download">Baixar Estatuto (PDF)</button>
-        </div>
-    </header>
-
     <!-- Main Content -->
-    <main class="estatuto-content">
-        <section>
-            <h2 id="secao1">CAPÍTULO I - DA DENOMINAÇÃO, SEDE E FINS</h2>
-            <p>Art. 1° - A Associação de Doação, também designada pela sigla AD, constituída em XX/XX/XXXX, é uma pessoa jurídica de direito privado, sem fins lucrativos, e duração por tempo indeterminado, com sede no município de São Paulo, Estado de São Paulo, e foro em São Paulo-SP.</p>
-            
-            <p>Art. 2° - A Associação de Doação tem por finalidade:</p>
-            <ol>
-                <li>Promover a assistência social;</li>
-                <li>Contribuir para a erradicação da pobreza;</li>
-                <li>Promover ações que visem o bem-estar e desenvolvimento do ser humano;</li>
-                <li>Desenvolver atividades educacionais e culturais;</li>
-                <li>Promover o voluntariado e a solidariedade;</li>
-                <li>Desenvolver e executar projetos socioambientais.</li>
-            </ol>
-        </section>
+    <main>
+        <!-- Estatuto Header -->
+        <div class="estatuto-header text-center">
+            <div class="container">
+                <h1>Estatuto da Associação</h1>
+                <p>Documento oficial que estabelece as normas de funcionamento da nossa entidade</p>
+            </div>
+        </div>
 
-        <section>
-            <h2 id="secao2">CAPÍTULO II - DOS SÓCIOS</h2>
-            <p>Art. 3° - A Associação é constituída por número ilimitado de sócios, distribuídos nas seguintes categorias:</p>
-            <ol>
-                <li><strong>Sócios Fundadores:</strong> aqueles que participaram da Assembleia de Constituição da Associação;</li>
-                <li><strong>Sócios Efetivos:</strong> pessoas físicas que colaboram efetivamente com as atividades da Associação;</li>
-                <li><strong>Sócios Colaboradores:</strong> pessoas físicas ou jurídicas que colaboram com a Associação mediante doações ou serviços voluntários;</li>
-                <li><strong>Sócios Honorários:</strong> pessoas físicas ou jurídicas que tenham prestado serviços relevantes à Associação.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2 id="secao3">CAPÍTULO III - DA ADMINISTRAÇÃO</h2>
-            <p>Art. 4° - A Associação será administrada pelos seguintes órgãos:</p>
-            <ol>
-                <li>Assembleia Geral;</li>
-                <li>Diretoria;</li>
-                <li>Conselho Fiscal.</li>
-            </ol>
-            
-            <h3>Da Assembleia Geral</h3>
-            <p>Art. 5° - A Assembleia Geral, órgão soberano da Associação, constituir-se-á dos sócios em pleno gozo de seus direitos estatutários.</p>
-            
-            <h3>Da Diretoria</h3>
-            <p>Art. 6° - A Diretoria será constituída por Presidente, Vice-Presidente, Secretário, Tesoureiro e Diretor Executivo.</p>
-            
-            <h3>Do Conselho Fiscal</h3>
-            <p>Art. 7° - O Conselho Fiscal será composto por três membros efetivos e três suplentes, eleitos pela Assembleia Geral.</p>
-        </section>
-        
-        <section>
-            <h2 id="secao4">CAPÍTULO IV - DOS RECURSOS FINANCEIROS</h2>
-            <p>Art. 8° - Os recursos financeiros necessários à manutenção da Associação poderão ser obtidos por:</p>
-            <ol>
-                <li>Contribuições de associados;</li>
-                <li>Doações de pessoas físicas e/ou jurídicas;</li>
-                <li>Rendimentos de aplicações de seus ativos financeiros;</li>
-                <li>Receitas de parcerias e convênios;</li>
-                <li>Outras receitas.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2 id="secao5">CAPÍTULO V - DAS DISPOSIÇÕES GERAIS</h2>
-            <p>Art. 9° - O presente estatuto poderá ser reformado, em qualquer tempo, por decisão da maioria absoluta dos sócios, em Assembleia Geral especialmente convocada para esse fim.</p>
-            
-            <p>Art. 10 - A Associação poderá ser extinta por deliberação da Assembleia Geral Extraordinária, especialmente convocada para esse fim, quando se tornar impossível a continuação de suas atividades.</p>
-            
-            <p>Art. 11 - Os casos omissos serão resolvidos pela Diretoria e referendados pela Assembleia Geral.</p>
-        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <!-- Table of Contents -->
+                    <div class="estatuto-toc sticky-top" style="top: 20px;">
+                        <h3>Sumário</h3>
+                        <ul id="toc-list">
+                            <li><a href="#capitulo1" class="toc-link">Capítulo I - Da Denominação, Sede e Fins</a></li>
+                            <li><a href="#capitulo2" class="toc-link">Capítulo II - Dos Associados</a></li>
+                            <li><a href="#capitulo3" class="toc-link">Capítulo III - Da Administração</a></li>
+                            <li><a href="#capitulo4" class="toc-link">Capítulo IV - Do Patrimônio</a></li>
+                            <li><a href="#capitulo5" class="toc-link">Capítulo V - Das Disposições Gerais</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-9">
+                    <!-- Download Button -->
+                    <div class="estatuto-actions text-center">
+                        <button id="download-estatuto" class="download-btn">
+                            <i class="fas fa-file-pdf me-2"></i>Download do Estatuto Completo
+                        </button>
+                    </div>
+                    
+                    <!-- Estatuto Content -->
+                    <div class="estatuto-content">
+                        <section id="capitulo1" class="estatuto-section">
+                            <h2>Capítulo I - Da Denominação, Sede e Fins</h2>
+                            <p>Art. 1º - A Associação Donation Daniel, fundada em 10 de março de 2023, é uma pessoa jurídica de direito privado, sem fins lucrativos, com sede e foro na cidade de São Paulo, Estado de São Paulo.</p>
+                            <p>Art. 2º - A Associação tem por finalidade promover a assistência social, cultural e educacional, com ênfase na promoção da saúde através de doações para tratamentos médicos.</p>
+                            <p>Art. 3º - No desenvolvimento de suas atividades, a Associação observará os princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e da eficiência.</p>
+                        </section>
+                        
+                        <section id="capitulo2" class="estatuto-section">
+                            <h2>Capítulo II - Dos Associados</h2>
+                            <p>Art. 4º - O quadro social da Associação é constituído por número ilimitado de associados, distribuídos nas seguintes categorias:</p>
+                            <ul>
+                                <li>Associados Fundadores: os que assinaram a ata de fundação;</li>
+                                <li>Associados Efetivos: os que forem admitidos após a fundação;</li>
+                                <li>Associados Beneméritos: os que prestarem relevantes serviços à Associação.</li>
+                            </ul>
+                            <p>Art. 5º - São direitos dos associados:</p>
+                            <ul>
+                                <li>Participar das assembleias gerais;</li>
+                                <li>Votar e ser votado para cargos eletivos;</li>
+                                <li>Propor a admissão de novos associados;</li>
+                                <li>Participar das atividades promovidas pela Associação.</li>
+                            </ul>
+                        </section>
+                        
+                        <section id="capitulo3" class="estatuto-section">
+                            <h2>Capítulo III - Da Administração</h2>
+                            <p>Art. 6º - A Associação será administrada pelos seguintes órgãos:</p>
+                            <ul>
+                                <li>Assembleia Geral;</li>
+                                <li>Diretoria Executiva;</li>
+                                <li>Conselho Fiscal.</li>
+                            </ul>
+                            <p>Art. 7º - A Assembleia Geral, órgão soberano da Associação, se reunirá ordinariamente uma vez por ano para:</p>
+                            <ul>
+                                <li>Apreciar o relatório anual da Diretoria;</li>
+                                <li>Discutir e aprovar as contas e o balanço aprovado pelo Conselho Fiscal;</li>
+                                <li>Eleger a Diretoria e o Conselho Fiscal, quando for o caso.</li>
+                            </ul>
+                        </section>
+                        
+                        <section id="capitulo4" class="estatuto-section">
+                            <h2>Capítulo IV - Do Patrimônio</h2>
+                            <p>Art. 8º - O patrimônio da Associação será constituído por:</p>
+                            <ul>
+                                <li>Contribuições dos associados;</li>
+                                <li>Doações, legados e heranças;</li>
+                                <li>Rendimentos de aplicações de seus ativos financeiros e outros;</li>
+                                <li>Aquisição de bens móveis e imóveis;</li>
+                                <li>Subvenções e auxílios de entidades públicas ou privadas.</li>
+                            </ul>
+                            <p>Art. 9º - Em caso de dissolução da Associação, o patrimônio líquido será transferido a outra pessoa jurídica sem fins lucrativos, preferencialmente com o mesmo objetivo social.</p>
+                        </section>
+                        
+                        <section id="capitulo5" class="estatuto-section">
+                            <h2>Capítulo V - Das Disposições Gerais</h2>
+                            <p>Art. 10º - O presente estatuto poderá ser reformado, a qualquer tempo, por decisão de 2/3 (dois terços) dos presentes à Assembleia Geral especialmente convocada para esse fim.</p>
+                            <p>Art. 11º - Os casos omissos serão resolvidos pela Diretoria e referendados pela Assembleia Geral.</p>
+                            <p>Art. 12º - O presente Estatuto entrará em vigor na data de seu registro em cartório.</p>
+                            <p class="text-center mt-5">São Paulo, 10 de março de 2023.</p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="estatuto-footer">
+    <footer class="bg-dark text-light py-4 mt-5">
         <div class="container">
-            <p>© 2025 Associação de Doação. Todos os direitos reservados.</p>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Donation Daniel</h5>
+                    <p>Ajudando a transformar vidas através da solidariedade.</p>
+                    <p>CNPJ: 00.000.000/0001-00</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Links Úteis</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Início</a></li>
+                        <li><a href="index.html#sobre" class="text-light">Sobre Nós</a></li>
+                        <li><a href="index.html#doar" class="text-light">Como Doar</a></li>
+                        <li><a href="estatuto.html" class="text-light">Estatuto</a></li>
+                        <li><a href="index.html#contato" class="text-light">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contato</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Rua Exemplo, 123 - São Paulo, SP</p>
+                    <p><i class="fas fa-phone me-2"></i>(11) 1234-5678</p>
+                    <p><i class="fas fa-envelope me-2"></i>contato@donationdaniel.org</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Donation Daniel. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/estatuto.js"></script>
 </body>
