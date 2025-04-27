@@ -1,141 +1,167 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estatuto - Donation Daniel</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/estatuto.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/logo.png" alt="Donation Daniel Logo" height="40">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#sobre">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#doar">Como Doar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="estatuto.html">Estatuto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contato">Contato</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Header / Navbar -->
+    <header id="header"></header>
 
     <!-- Main Content -->
     <main>
-        <!-- Estatuto Header -->
-        <div class="estatuto-header text-center">
-            <div class="container">
+        <div class="estatuto-container">
+            <div class="estatuto-header">
                 <h1>Estatuto da Associação</h1>
-                <p>Documento oficial que estabelece as normas de funcionamento da nossa entidade</p>
+                <p>Documento oficial que estabelece as normas, diretrizes e funcionamento da Donation Daniel</p>
             </div>
-        </div>
 
-        <div class="container">
+            <div class="download-container">
+                <a href="#" class="download-btn" id="downloadEstatuto">
+                    <i class="fas fa-file-pdf"></i> Baixar Estatuto Completo (PDF)
+                </a>
+            </div>
+
             <div class="row">
-                <div class="col-lg-3">
-                    <!-- Table of Contents -->
-                    <div class="estatuto-toc sticky-top" style="top: 20px;">
-                        <h3>Sumário</h3>
-                        <ul id="toc-list">
-                            <li><a href="#capitulo1" class="toc-link">Capítulo I - Da Denominação, Sede e Fins</a></li>
-                            <li><a href="#capitulo2" class="toc-link">Capítulo II - Dos Associados</a></li>
-                            <li><a href="#capitulo3" class="toc-link">Capítulo III - Da Administração</a></li>
-                            <li><a href="#capitulo4" class="toc-link">Capítulo IV - Do Patrimônio</a></li>
-                            <li><a href="#capitulo5" class="toc-link">Capítulo V - Das Disposições Gerais</a></li>
+                <div class="col-md-4">
+                    <div class="estatuto-toc">
+                        <h2>Índice</h2>
+                        <ul class="toc-list">
+                            <li><a href="#secao1" class="toc-link">Capítulo I - Da Denominação, Sede e Fins</a></li>
+                            <li><a href="#secao2" class="toc-link">Capítulo II - Dos Associados</a></li>
+                            <li><a href="#secao3" class="toc-link">Capítulo III - Da Administração</a></li>
+                            <li><a href="#secao4" class="toc-link">Capítulo IV - Da Assembleia Geral</a></li>
+                            <li><a href="#secao5" class="toc-link">Capítulo V - Da Diretoria</a></li>
+                            <li><a href="#secao6" class="toc-link">Capítulo VI - Do Conselho Fiscal</a></li>
+                            <li><a href="#secao7" class="toc-link">Capítulo VII - Do Patrimônio</a></li>
+                            <li><a href="#secao8" class="toc-link">Capítulo VIII - Das Disposições Gerais</a></li>
                         </ul>
                     </div>
                 </div>
-                
-                <div class="col-lg-9">
-                    <!-- Download Button -->
-                    <div class="estatuto-actions text-center">
-                        <button id="download-estatuto" class="download-btn">
-                            <i class="fas fa-file-pdf me-2"></i>Download do Estatuto Completo
-                        </button>
-                    </div>
-                    
-                    <!-- Estatuto Content -->
+                <div class="col-md-8">
                     <div class="estatuto-content">
-                        <section id="capitulo1" class="estatuto-section">
+                        <section id="secao1" class="estatuto-section">
                             <h2>Capítulo I - Da Denominação, Sede e Fins</h2>
-                            <p>Art. 1º - A Associação Donation Daniel, fundada em 10 de março de 2023, é uma pessoa jurídica de direito privado, sem fins lucrativos, com sede e foro na cidade de São Paulo, Estado de São Paulo.</p>
-                            <p>Art. 2º - A Associação tem por finalidade promover a assistência social, cultural e educacional, com ênfase na promoção da saúde através de doações para tratamentos médicos.</p>
-                            <p>Art. 3º - No desenvolvimento de suas atividades, a Associação observará os princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e da eficiência.</p>
-                        </section>
-                        
-                        <section id="capitulo2" class="estatuto-section">
-                            <h2>Capítulo II - Dos Associados</h2>
-                            <p>Art. 4º - O quadro social da Associação é constituído por número ilimitado de associados, distribuídos nas seguintes categorias:</p>
+                            <p><strong>Art. 1º</strong> - A Donation Daniel, também designada pela sigla DD, constituída em XX/XX/XXXX, é uma pessoa jurídica de direito privado, sem fins lucrativos, com sede e foro na cidade de São Paulo, Estado de São Paulo.</p>
+                            
+                            <p><strong>Art. 2º</strong> - A Donation Daniel tem por finalidade:</p>
                             <ul>
-                                <li>Associados Fundadores: os que assinaram a ata de fundação;</li>
-                                <li>Associados Efetivos: os que forem admitidos após a fundação;</li>
-                                <li>Associados Beneméritos: os que prestarem relevantes serviços à Associação.</li>
+                                <li>Promover a saúde e o bem-estar de pessoas com necessidades especiais;</li>
+                                <li>Desenvolver projetos sociais que visem a inclusão social e a melhoria da qualidade de vida;</li>
+                                <li>Arrecadar fundos e recursos para assistência a pessoas com deficiência;</li>
+                                <li>Promover a conscientização sobre a inclusão e acessibilidade.</li>
                             </ul>
-                            <p>Art. 5º - São direitos dos associados:</p>
+                            
+                            <p><strong>Art. 3º</strong> - No desenvolvimento de suas atividades, a Donation Daniel observará os princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e da eficiência.</p>
+                        </section>
+
+                        <section id="secao2" class="estatuto-section">
+                            <h2>Capítulo II - Dos Associados</h2>
+                            <p><strong>Art. 4º</strong> - A Donation Daniel é constituída por número ilimitado de associados, distribuídos nas seguintes categorias:</p>
                             <ul>
-                                <li>Participar das assembleias gerais;</li>
+                                <li><strong>Fundadores:</strong> aqueles que assinaram a ata de fundação;</li>
+                                <li><strong>Efetivos:</strong> aqueles que contribuem regularmente com as atividades da associação;</li>
+                                <li><strong>Beneméritos:</strong> aqueles que prestam relevantes serviços à associação;</li>
+                                <li><strong>Honorários:</strong> pessoas de notório saber ou que tenham prestado relevantes serviços à sociedade.</li>
+                            </ul>
+                            
+                            <p><strong>Art. 5º</strong> - São direitos dos associados:</p>
+                            <ul>
+                                <li>Participar das atividades da associação;</li>
                                 <li>Votar e ser votado para cargos eletivos;</li>
                                 <li>Propor a admissão de novos associados;</li>
-                                <li>Participar das atividades promovidas pela Associação.</li>
+                                <li>Apresentar sugestões e propostas de interesse da associação.</li>
                             </ul>
                         </section>
-                        
-                        <section id="capitulo3" class="estatuto-section">
+
+                        <section id="secao3" class="estatuto-section">
                             <h2>Capítulo III - Da Administração</h2>
-                            <p>Art. 6º - A Associação será administrada pelos seguintes órgãos:</p>
+                            <p><strong>Art. 6º</strong> - A Donation Daniel será administrada pelos seguintes órgãos:</p>
                             <ul>
                                 <li>Assembleia Geral;</li>
-                                <li>Diretoria Executiva;</li>
+                                <li>Diretoria;</li>
                                 <li>Conselho Fiscal.</li>
                             </ul>
-                            <p>Art. 7º - A Assembleia Geral, órgão soberano da Associação, se reunirá ordinariamente uma vez por ano para:</p>
+                            
+                            <p><strong>Art. 7º</strong> - A Assembleia Geral é o órgão máximo da associação, sendo constituída por todos os associados em pleno gozo de seus direitos estatutários.</p>
+                        </section>
+
+                        <section id="secao4" class="estatuto-section">
+                            <h2>Capítulo IV - Da Assembleia Geral</h2>
+                            <p><strong>Art. 8º</strong> - A Assembleia Geral reunir-se-á ordinariamente uma vez por ano para:</p>
                             <ul>
                                 <li>Apreciar o relatório anual da Diretoria;</li>
-                                <li>Discutir e aprovar as contas e o balanço aprovado pelo Conselho Fiscal;</li>
-                                <li>Eleger a Diretoria e o Conselho Fiscal, quando for o caso.</li>
+                                <li>Discutir e homologar as contas e o balanço aprovado pelo Conselho Fiscal.</li>
+                            </ul>
+                            
+                            <p><strong>Art. 9º</strong> - A Assembleia Geral reunir-se-á extraordinariamente quando convocada por:</p>
+                            <ul>
+                                <li>Diretoria;</li>
+                                <li>Conselho Fiscal;</li>
+                                <li>Um quinto dos associados em pleno gozo de seus direitos estatutários.</li>
                             </ul>
                         </section>
-                        
-                        <section id="capitulo4" class="estatuto-section">
-                            <h2>Capítulo IV - Do Patrimônio</h2>
-                            <p>Art. 8º - O patrimônio da Associação será constituído por:</p>
+
+                        <section id="secao5" class="estatuto-section">
+                            <h2>Capítulo V - Da Diretoria</h2>
+                            <p><strong>Art. 10º</strong> - A Diretoria será constituída por:</p>
+                            <ul>
+                                <li>Presidente;</li>
+                                <li>Vice-Presidente;</li>
+                                <li>Secretário;</li>
+                                <li>Tesoureiro.</li>
+                            </ul>
+                            
+                            <p><strong>Art. 11º</strong> - Compete à Diretoria:</p>
+                            <ul>
+                                <li>Elaborar e executar programa anual de atividades;</li>
+                                <li>Elaborar e apresentar relatório anual à Assembleia Geral;</li>
+                                <li>Estabelecer o valor das contribuições dos associados;</li>
+                                <li>Entrosar-se com instituições públicas e privadas para mútua colaboração.</li>
+                            </ul>
+                        </section>
+
+                        <section id="secao6" class="estatuto-section">
+                            <h2>Capítulo VI - Do Conselho Fiscal</h2>
+                            <p><strong>Art. 12º</strong> - O Conselho Fiscal será constituído por 3 (três) membros efetivos e 3 (três) suplentes, eleitos pela Assembleia Geral.</p>
+                            
+                            <p><strong>Art. 13º</strong> - Compete ao Conselho Fiscal:</p>
+                            <ul>
+                                <li>Examinar os livros contábeis e demais documentos relativos à escrituração;</li>
+                                <li>Verificar o estado do caixa e os valores em depósito;</li>
+                                <li>Apresentar relatórios de receitas e despesas sempre que forem solicitados;</li>
+                                <li>Opinar sobre a aquisição e alienação de bens.</li>
+                            </ul>
+                        </section>
+
+                        <section id="secao7" class="estatuto-section">
+                            <h2>Capítulo VII - Do Patrimônio</h2>
+                            <p><strong>Art. 14º</strong> - O patrimônio da Donation Daniel será constituído de:</p>
                             <ul>
                                 <li>Contribuições dos associados;</li>
-                                <li>Doações, legados e heranças;</li>
-                                <li>Rendimentos de aplicações de seus ativos financeiros e outros;</li>
-                                <li>Aquisição de bens móveis e imóveis;</li>
-                                <li>Subvenções e auxílios de entidades públicas ou privadas.</li>
+                                <li>Doações, legados, subvenções e outros auxílios recebidos de pessoas físicas ou jurídicas, públicas ou privadas, nacionais ou estrangeiras;</li>
+                                <li>Rendimentos de aplicações de seus ativos financeiros e outros, pertinentes ao patrimônio sob sua administração;</li>
+                                <li>Rendimentos auferidos em promoções da entidade.</li>
                             </ul>
-                            <p>Art. 9º - Em caso de dissolução da Associação, o patrimônio líquido será transferido a outra pessoa jurídica sem fins lucrativos, preferencialmente com o mesmo objetivo social.</p>
                         </section>
-                        
-                        <section id="capitulo5" class="estatuto-section">
-                            <h2>Capítulo V - Das Disposições Gerais</h2>
-                            <p>Art. 10º - O presente estatuto poderá ser reformado, a qualquer tempo, por decisão de 2/3 (dois terços) dos presentes à Assembleia Geral especialmente convocada para esse fim.</p>
-                            <p>Art. 11º - Os casos omissos serão resolvidos pela Diretoria e referendados pela Assembleia Geral.</p>
-                            <p>Art. 12º - O presente Estatuto entrará em vigor na data de seu registro em cartório.</p>
-                            <p class="text-center mt-5">São Paulo, 10 de março de 2023.</p>
+
+                        <section id="secao8" class="estatuto-section">
+                            <h2>Capítulo VIII - Das Disposições Gerais</h2>
+                            <p><strong>Art. 15º</strong> - A Donation Daniel será dissolvida por decisão da Assembleia Geral, quando se tornar impossível a continuação de suas atividades.</p>
+                            
+                            <p><strong>Art. 16º</strong> - Em caso de dissolução, depois de pagos todos os compromissos, o patrimônio residual será destinado a uma entidade congênere, com personalidade jurídica, sede e atividades no Brasil, registrada no Conselho Nacional de Assistência Social, ou a uma entidade pública de finalidade semelhante, a critério da Assembleia Geral.</p>
+                            
+                            <p><strong>Art. 17º</strong> - O presente estatuto poderá ser reformado, em qualquer tempo, por decisão de 2/3 (dois terços) dos presentes à Assembleia Geral especialmente convocada para esse fim, e entrará em vigor na data de seu registro em cartório.</p>
+                            
+                            <p><strong>Art. 18º</strong> - Os casos omissos serão resolvidos pela Diretoria e referendados pela Assembleia Geral.</p>
                         </section>
                     </div>
                 </div>
@@ -144,45 +170,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5>Donation Daniel</h5>
-                    <p>Ajudando a transformar vidas através da solidariedade.</p>
-                    <p>CNPJ: 00.000.000/0001-00</p>
-                </div>
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5>Links Úteis</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-light">Início</a></li>
-                        <li><a href="index.html#sobre" class="text-light">Sobre Nós</a></li>
-                        <li><a href="index.html#doar" class="text-light">Como Doar</a></li>
-                        <li><a href="estatuto.html" class="text-light">Estatuto</a></li>
-                        <li><a href="index.html#contato" class="text-light">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contato</h5>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>Rua Exemplo, 123 - São Paulo, SP</p>
-                    <p><i class="fas fa-phone me-2"></i>(11) 1234-5678</p>
-                    <p><i class="fas fa-envelope me-2"></i>contato@donationdaniel.org</p>
-                    <div class="social-icons mt-3">
-                        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <p class="mb-0">&copy; 2023 Donation Daniel. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <footer id="footer"></footer>
 
-    <!-- Scripts -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
     <script src="js/estatuto.js"></script>
 </body>
 </html>
