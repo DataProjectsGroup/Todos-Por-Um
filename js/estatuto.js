@@ -1,54 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle download button click
-    const downloadBtn = document.getElementById('download-estatuto');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function() {
-            // In a real application, this would link to an actual PDF file
-            alert('Em uma implementação real, isto iniciaria o download do estatuto em formato PDF.');
+    // Highlight active section in TOC when scrolling
+    const sections = document.querySelectorAll('.estatuto-section');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
             
-            // For demonstration purposes, you can uncomment this line and replace with actual file path
-            // window.location.href = 'assets/estatuto.pdf';
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
         });
-    }
-
-    // Add smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100, // Offset for the navbar
-                    behavior: 'smooth'
-                });
+        
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
             }
         });
     });
-
-    // Optional: Add table of contents functionality or other interactive elements
-    const sections = document.querySelectorAll('main section h2');
-    const sectionsList = document.createElement('ul');
-    sectionsList.classList.add('estatuto-toc');
-
-    // Add highlighting for current section based on scroll position
-    window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY;
-        
-        document.querySelectorAll('main section').forEach(section => {
-            const sectionTop = section.offsetTop - 150;
-            const sectionHeight = section.offsetHeight;
+    
+    // Smooth scrolling for TOC links
+    document.querySelectorAll('.toc-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            if(scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                const id = section.querySelector('h2').id;
-                document.querySelectorAll('.estatuto-toc a').forEach(link => {
-                    link.classList.remove('active');
-                    if(link.getAttribute('href') === '#' + id) {
-                        link.classList.add('active');
-                    }
-                });
-            }
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            window.scrollTo({
+                top: targetElement.offsetTop - 50,
+                behavior: 'smooth'
+            });
         });
+    });
+    
+    // Handle PDF download
+    document.getElementById('download-estatuto').addEventListener('click', function() {
+        // In a real application, this would link to an actual PDF file
+        alert('O download do estatuto em PDF iniciará em breve.');
+        
+        // Simulate download by creating a dummy PDF link
+        // In a production environment, replace with actual PDF file URL
+        const link = document.createElement('a');
+        link.href = 'assets/documents/estatuto.pdf';
+        link.download = 'Estatuto_Donation_Daniel.pdf';
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     });
 });
