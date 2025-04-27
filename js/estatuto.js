@@ -1,30 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Download PDF functionality
+    // Handle PDF download functionality
     const downloadBtn = document.querySelector('.btn-download');
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
-            // In a real implementation, this would generate or serve a PDF
-            // For now, we're just showing an alert
-            alert('Funcionalidade de download do PDF será implementada em breve!');
+            // Alert to inform user this feature is coming soon
+            alert('O download do PDF estará disponível em breve!');
             
-            // Alternatively, you could redirect to a pre-generated PDF:
-            // window.location.href = 'assets/estatuto-tofm.pdf';
+            // In the future, this can be replaced with actual PDF generation and download code
+            // For example:
+            // window.location.href = 'assets/docs/estatuto.pdf';
         });
     }
-
-    // Add animations and highlighting effects to sections when they come into view
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    // Observe all section headers
-    document.querySelectorAll('.estatuto-content h2').forEach(section => {
-        observer.observe(section);
-    });
+    
+    // Initialize any additional functionality specific to the estatuto page
+    function initEstatutoPage() {
+        // Add smooth scrolling to the document sections
+        const estatutoContent = document.querySelector('.estatuto-content');
+        
+        // Add class to headings after they've been viewed
+        if (estatutoContent) {
+            const headings = estatutoContent.querySelectorAll('h2');
+            
+            // Create an intersection observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('viewed');
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+            
+            // Observe each heading
+            headings.forEach(heading => {
+                observer.observe(heading);
+            });
+        }
+    }
+    
+    // Initialize the estatuto page
+    initEstatutoPage();
 });
