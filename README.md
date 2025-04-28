@@ -8,15 +8,29 @@ Este projeto visa oferecer acolhimento às crianças em situação de vulnerabil
 
 A ideia-base é promover assistência social, cultural, educação, saúde, segurança alimentar e o voluntariado. Como resultado, promover o desenvolvimento econômico e social e combate à pobreza, a ética, a paz, a cidadania, os direitos humanos e outros valores universais.
 
-## Estrutura do Projeto
+## Estrutura Atual do Projeto
 
 ```
-├── index.html          # Página principal
+├── index.html                  # Página principal
+├── estatuto.html               # Página de estatuto
+├── cartilha.html               # Página de cartilha
 ├── css/
-│   └── styles.css      # Estilos CSS
+│   └── styles.css              # Estilos CSS
 ├── js/
-│   └── scripts.js      # Funcionalidades JavaScript
-└── assets/             # Imagens e mídia
+│   └── scripts.js              # Funcionalidades JavaScript
+└── assets/                     # Imagens e mídia
+    ├── logo.webp               # Logo da organização
+    ├── CARTILHA.pdf            # PDF da cartilha
+    ├── foto-daniel-strand.jpg  # Foto do responsável
+    ├── foto-futsal.jpg         # Foto de quadra de futsal
+    ├── foto-lugar.png          # Foto do centro de acolhimento
+    ├── foto-maos.jpg           # Imagem de mãos (fundo da seção hero)
+    ├── foto-piscina.jpg        # Foto da piscina
+    ├── foto-restaurante.jpg    # Foto do restaurante
+    ├── foto-sala-cheia.png     # Foto de sala com alunos
+    ├── foto-sala-de-aula.jpg   # Foto de sala de aula
+    ├── foto-sala-estudo.jpg    # Foto de sala de estudo
+    └── foto-society.jpg        # Foto de campo society
 ```
 
 ## Seções do Site
@@ -25,22 +39,41 @@ A ideia-base é promover assistência social, cultural, educação, saúde, segu
 - **Institucional** - Informações sobre a instituição
   - Quem Somos
   - Nossa História
-  - Mídia
-  - Estatuto
   - Projeto
-- **Nossas Fotos** - Galeria de fotos das atividades e eventos
+  - Estatuto
+  - Cartilha
+- **Nossas Fotos** - Galeria de fotos das atividades e instalações
 - **Doação** - Formulário para contribuições
 - **Contato** - Informações de contato
 
-## Iniciando o Projeto
+## Componentes Principais
 
-1. Clone o repositório:
-```bash
-git clone https://github.com/DataProjectsGroup/Donation-Daniel.git
-cd Donation-Daniel
-```
+### 1. Header
+Barra de navegação fixa com logo e menu principal, incluindo submenus para a seção Institucional.
 
-2. Abra o arquivo `index.html` no seu navegador para visualizar o site.
+### 2. Seção Hero
+Banner principal com imagem de fundo (foto-maos.jpg) e chamada para ação.
+
+### 3. Seção Quem Somos
+Apresentação da missão e valores da organização.
+
+### 4. Seção Nossa História
+Relato sobre a origem e inspiração do projeto.
+
+### 5. Seção Projetos
+Descrição dos projetos de acolhimento, educação e cultura.
+
+### 6. Galeria de Fotos
+Exibição das instalações e ambientes disponíveis.
+
+### 7. Seção de Doação
+Formulário para doações com opções de valores e métodos de pagamento.
+
+### 8. Seção Responsável
+Informações sobre o fundador Daniel Senna Strand.
+
+### 9. Footer
+Rodapé com informações de contato, redes sociais e direitos autorais.
 
 ## Personalização
 
@@ -49,17 +82,6 @@ Para personalizar este site:
 1. Substitua as imagens na pasta `assets/` com as imagens da sua organização
 2. Atualize as informações de contato em `index.html`
 3. Modifique cores e estilos em `css/styles.css` para corresponder à sua identidade visual
-
-## Imagens Necessárias
-
-O site requer as seguintes imagens na pasta `assets/`:
-
-- `logo.webp` - Logo da organização
-- `hero-bg.jpg` - Imagem de fundo para a seção inicial
-- `donation-bg.jpg` - Imagem de fundo para a seção de doação
-- `projeto1.jpg` e `projeto2.jpg` - Imagens para os projetos
-- `gallery1.jpg` até `gallery6.jpg` - Imagens para a galeria de fotos
-- `daniel.jpg` - Foto do responsável
 
 ## Responsável pelo Projeto
 
