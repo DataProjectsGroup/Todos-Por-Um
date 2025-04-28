@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="assets/logo.png" type="image/png">
+    <style>
+        /* Estilos do botão Fale Conosco para ser sempre visível */
+        .footer-contact-form button.btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            opacity: 1;
+        }
+        
+        .footer-contact-form button.btn-secondary:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,9 +29,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Início</a></li>
+                    <li><a href="#" class="active">Início</a></li>
                     <li class="dropdown">
-                        <a href="#institucional">Institucional <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Institucional <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
                             <a href="#quem-somos">Quem Somos</a>
                             <a href="#nossa-historia">Nossa História</a>
@@ -35,146 +48,227 @@
         </div>
     </header>
 
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="container">
-            <h2>TODOS POR UM FUTURO MELHOR</h2>
-            <h3>ERRADICAR A VULNERABILIDADE INFANTO-JUVENIL</h3>
-            <p>UM POR TODOS, TODOS POR UM</p>
-            <p>Centro de acolhimento às crianças e adolescentes em situação de vulnerabilidade</p>
-            <a href="#donate" class="btn">Doe Agora</a>
+            <div class="hero-content">
+                <h1>TODOS POR UM FUTURO <span>MELHOR</span></h1>
+                <p>Unidos para erradicar a vulnerabilidade infanto-juvenil</p>
+                <a href="#donate" class="btn">Faça sua doação</a>
+                <a href="#quem-somos" class="btn-secondary">Saiba mais</a>
+            </div>
         </div>
     </section>
 
-    <section id="quem-somos" class="mission">
+    <section class="about" id="quem-somos">
         <div class="container">
-            <h2>Quem Somos</h2>
-            <p>Somos um grupo de pessoas unindo forças para criar as OBRAS SOCIAIS TODOS POR UM, com o lema de unir forças para um futuro de justiça social e promoção dos direitos universais, como a educação em tempo integral, cultura, esportes e instrução necessários às oportunidades do mundo moderno.</p>
-            <p>Nossa proposta é oferecer educação, cultura, assistência social, saúde e progresso para crianças e adolescentes em situação de vulnerabilidade social irrestrita, independente de cor, raça, credo religioso, classe social, concepção político-partidária, filosófica ou nacionalidade.</p>
-            <p>A propagação do voluntariado é um norte primordial para recrutar jovens engajados na busca por justiça social. Estamos buscando parceiros para unir forças, integrar e recrutar pessoas imbuídas e sensibilizadas, trocar ideias e mobilizar a pôr em prática.</p>
-            <a href="#donate" class="btn">Doe Agora</a>
+            <div class="section-header">
+                <h2>Quem Somos</h2>
+                <p class="subtitle">Nossa missão é transformar vidas</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>A <strong>Associação Todos Por Um Futuro Melhor</strong> é uma entidade sem fins lucrativos que atua no combate à vulnerabilidade infanto-juvenil através de projetos educacionais e desenvolvimento esportivo.</p>
+                    <p>Nosso trabalho é baseado em três pilares fundamentais:</p>
+                    <ul>
+                        <li><strong>Educação</strong> - Oferecemos aulas complementares e apoio pedagógico</li>
+                        <li><strong>Esporte</strong> - Desenvolvemos atividades esportivas como ferramenta de inclusão social</li>
+                        <li><strong>Assistência Social</strong> - Promovemos ações para melhorar a qualidade de vida das famílias</li>
+                    </ul>
+                    <p>Acreditamos no potencial de cada criança e adolescente, e trabalhamos para proporcionar oportunidades que transformem suas realidades.</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/foto-sala-estudo.jpg" alt="Crianças estudando">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="nossa-historia" class="history">
+    <section class="history" id="nossa-historia">
         <div class="container">
-            <h2>Nossa História</h2>
+            <div class="section-header">
+                <h2>Nossa História</h2>
+                <p class="subtitle">Como tudo começou</p>
+            </div>
             <div class="history-content">
+                <div class="history-image">
+                    <img src="assets/foto-daniel-strand.jpg" alt="Fundador Daniel Strand">
+                </div>
                 <div class="history-text">
-                    <p>A ideia surgiu nos idos dos anos 90, a partir da Organização Não-Governamental ("ONG") Internacional Free The Children, fundada por uma criança Canadense de 13 anos de idade chamado Craig Kielburger.</p>
-                    <p>Craig acordou pela manhã em Toronto/Canadá, e se deparou com uma notícia de jornal, de que um garoto paquistanês fora assassinado porque lutava contra o trabalho escravo infantil. O garoto chamava-se Iqbal Masih.</p>
-                    <p>Sua voz ecoou pelo mundo e chamou a atenção da comunidade internacional para o problema crítico que envolvia grandes indústrias de tapeçaria e nomes da moda. Encontrou-se com Madre Tereza de Calcutá, Papa João Paulo II, ex Vice-Presidente norte-americano Al Gore e ganhou prêmios internacionais.</p>
-                    <p>No Brasil, Craig também fez amigos e trouxe a Free The Children. Instalada inicialmente na Bahia, a ONG fez parcerias com o UNICEF, Ministério Público do Trabalho, Organização Internacional do Trabalho, Governo do Estado e Governo Federal.</p>
-                    <p>As instituições uniram forças e criaram o Programa de Erradicação do Trabalho Infantil, posteriormente conhecido simplesmente pela sigla PETI.</p>
+                    <p>A <strong>Associação Todos Por Um Futuro Melhor</strong> foi fundada por Daniel Strand, um jovem que desde cedo se preocupou com a situação de vulnerabilidade de crianças e adolescentes em sua comunidade.</p>
+                    <p>Nossa história começa em 2018, quando Daniel notou a falta de oportunidades educacionais e recreativas para os jovens do bairro. Com ajuda de amigos e familiares, ele iniciou um projeto simples de apoio escolar em um pequeno espaço cedido por uma igreja local.</p>
+                    <p>O que começou como uma iniciativa modesta rapidamente cresceu, atraindo voluntários e parceiros que compartilhavam da mesma visão. Em 2020, nos formalizamos como associação, ampliando nosso alcance e impacto na comunidade.</p>
+                    <p>Hoje, atendemos mais de 100 crianças e adolescentes, oferecendo atividades educacionais, esportivas e culturais que contribuem para o desenvolvimento integral e para a redução da vulnerabilidade social.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projeto" class="projects">
+    <section class="project" id="projeto">
         <div class="container">
-            <h2>Nosso Projeto</h2>
-            <div class="project-grid">
-                <div class="project">
-                    <h3>Centro de Acolhimento</h3>
-                    <div class="project-image">
-                        <img src="assets/foto-lugar.png" alt="Centro de Acolhimento">
+            <div class="section-header">
+                <h2>Nosso Projeto</h2>
+                <p class="subtitle">Como fazemos a diferença</p>
+            </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-book-open"></i>
                     </div>
-                    <p>O Projeto cria lares substitutos para crianças abandonadas, com atenção e parceria do Ministério Público e demais entidades de supervisão. Outros jovens também serão acolhidos, mesmo que tenham seus próprios lares, permitindo acesso diário sem prejuízo do convívio familiar.</p>
-                    <a href="#" class="btn-secondary">Saiba Mais</a>
+                    <h3>Reforço Escolar</h3>
+                    <p>Oferecemos aulas complementares para crianças e adolescentes, com foco em português e matemática, além de suporte para tarefas escolares.</p>
                 </div>
-                <div class="project">
-                    <h3>Educação e Cultura</h3>
-                    <div class="project-image">
-                        <img src="assets/foto-sala-cheia.png" alt="Educação e Cultura">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-futbol"></i>
                     </div>
-                    <p>Teremos edificações com salas de aula totalmente equipadas, oferecendo o ensino básico e fundamental, inclusive de línguas estrangeiras. Centros de informática, de saúde, nutrição e esportivos, além de oficinas de música e arte para a formação dos novos talentos.</p>
-                    <a href="#" class="btn-secondary">Saiba Mais</a>
+                    <h3>Esporte Educacional</h3>
+                    <p>Utilizamos o esporte como ferramenta pedagógica, oferecendo atividades como futsal, natação e outras modalidades coletivas.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Oficinas Culturais</h3>
+                    <p>Desenvolvemos a criatividade através de oficinas de arte, música e teatro, ampliando o horizonte cultural das crianças.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Suporte Familiar</h3>
+                    <p>Oferecemos orientação e apoio às famílias, com palestras e encontros sobre educação, saúde e desenvolvimento infantil.</p>
+                </div>
+            </div>
+            <div class="results">
+                <h3>Nossos Resultados</h3>
+                <div class="results-metrics">
+                    <div class="metric">
+                        <span class="number">100+</span>
+                        <span class="label">Crianças atendidas</span>
+                    </div>
+                    <div class="metric">
+                        <span class="number">84%</span>
+                        <span class="label">Melhora no desempenho escolar</span>
+                    </div>
+                    <div class="metric">
+                        <span class="number">95%</span>
+                        <span class="label">Permanência escolar</span>
+                    </div>
+                    <div class="metric">
+                        <span class="number">2500+</span>
+                        <span class="label">Horas de atividades/ano</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="fotos" class="gallery">
+    <section class="photos" id="fotos">
         <div class="container">
-            <h2>Nossas Fotos</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="assets/foto-sala-de-aula.jpg" alt="Sala de Aula">
+            <div class="section-header">
+                <h2>Nossas Fotos</h2>
+                <p class="subtitle">Conheça um pouco do nosso dia a dia</p>
+            </div>
+            <div class="photo-gallery">
+                <div class="photo">
+                    <img src="assets/foto-sala-de-aula.jpg" alt="Sala de aula">
+                    <div class="photo-overlay">
+                        <p>Atividades educacionais</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/foto-sala-estudo.jpg" alt="Sala de Estudo">
+                <div class="photo">
+                    <img src="assets/foto-futsal.jpg" alt="Atividades de futsal">
+                    <div class="photo-overlay">
+                        <p>Prática de futsal</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/foto-futsal.jpg" alt="Quadra de Futsal">
+                <div class="photo">
+                    <img src="assets/foto-piscina.jpg" alt="Aulas de natação">
+                    <div class="photo-overlay">
+                        <p>Aulas de natação</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/foto-society.jpg" alt="Campo Society">
+                <div class="photo">
+                    <img src="assets/foto-sala-cheia.png" alt="Encontro com as famílias">
+                    <div class="photo-overlay">
+                        <p>Encontro com as famílias</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/foto-piscina.jpg" alt="Piscina">
+                <div class="photo">
+                    <img src="assets/foto-society.jpg" alt="Aulas de futebol society">
+                    <div class="photo-overlay">
+                        <p>Futebol society</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/foto-restaurante.jpg" alt="Restaurante">
+                <div class="photo">
+                    <img src="assets/foto-restaurante.jpg" alt="Alimentação balanceada">
+                    <div class="photo-overlay">
+                        <p>Alimentação balanceada</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="donate" class="donation">
+    <section class="donate" id="donate">
         <div class="container">
-            <h2>Faça uma Doação</h2>
-            <p>Seu apoio é fundamental para continuarmos nosso trabalho de acolhimento às crianças e adolescentes em situação de vulnerabilidade.</p>
-            <div class="donation-form">
-                <form>
-                    <div class="form-group">
-                        <label for="amount">Valor da Doação</label>
-                        <div class="amount-options">
-                            <button type="button" class="amount-btn">R$25</button>
-                            <button type="button" class="amount-btn">R$50</button>
-                            <button type="button" class="amount-btn active">R$100</button>
-                            <button type="button" class="amount-btn">R$200</button>
-                            <button type="button" class="amount-btn">Outro</button>
+            <div class="section-header">
+                <h2>Faça sua Doação</h2>
+                <p class="subtitle">Ajude-nos a transformar mais vidas</p>
+            </div>
+            <div class="donate-content">
+                <div class="donate-text">
+                    <p>Sua contribuição é fundamental para que possamos continuar e ampliar nosso trabalho. Com sua ajuda, podemos oferecer mais oportunidades para crianças e adolescentes em situação de vulnerabilidade.</p>
+                    <p>Você pode doar de diferentes formas:</p>
+                    <ul>
+                        <li><strong>Doação financeira</strong> - Qualquer valor é importante e faz diferença</li>
+                        <li><strong>Doação de materiais</strong> - Materiais escolares, esportivos, alimentos, etc.</li>
+                        <li><strong>Voluntariado</strong> - Doe seu tempo e conhecimento</li>
+                    </ul>
+                    <p>Todas as doações são direcionadas integralmente para nossas atividades e projetos.</p>
+                </div>
+                <div class="donate-card">
+                    <h3>Transferência Bancária</h3>
+                    <p><strong>Banco:</strong> Itaú (341)</p>
+                    <p><strong>Agência:</strong> 8686</p>
+                    <p><strong>Conta:</strong> 38684-2</p>
+                    <p><strong>CNPJ:</strong> 29.353.563/0001-12</p>
+                    <p><strong>Favorecido:</strong> Associação Todos Por Um Futuro Melhor</p>
+                    <div class="donate-actions">
+                        <a href="#" class="btn-secondary">Copiar dados</a>
+                        <a href="#" class="btn">Fazer PIX</a>
+                    </div>
+                </div>
+            </div>
+            <div class="donate-benefits">
+                <h3>Por que doar para nossa causa?</h3>
+                <div class="benefits-list">
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
                         </div>
-                        <input type="number" id="amount" name="amount" placeholder="Valor Personalizado" value="100">
+                        <div class="benefit-text">
+                            <h4>Impacto real</h4>
+                            <p>Sua doação tem impacto direto na vida de crianças e adolescentes.</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="name">Nome Completo</label>
-                        <input type="text" id="name" name="name" required>
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Resultados mensuráveis</h4>
+                            <p>Compartilhamos regularmente relatórios de resultados com nossos apoiadores.</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="payment">Método de Pagamento</label>
-                        <select id="payment" name="payment">
-                            <option value="credit">Cartão de Crédito</option>
-                            <option value="pix">PIX</option>
-                            <option value="bank">Transferência Bancária</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn">Doar Agora</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section id="responsavel" class="team">
-        <div class="container">
-            <h2>Responsável</h2>
-            <div class="team-member">
-                <div class="member-photo">
-                    <img src="assets/foto-daniel-strand.jpg" alt="Daniel Senna Strand">
-                </div>
-                <div class="member-info">
-                    <h3>Daniel Senna Strand</h3>
-                    <p class="member-title">Fundador</p>
-                    <p class="member-bio">Advogado militante por 20 anos e agora lutando por 1 futuro melhor com crianças fora do trabalho e das ruas.</p>
-                    <div class="member-contact">
-                        <p><i class="fas fa-envelope"></i> danielstrand@todospor1.org</p>
-                        <p><i class="fas fa-phone"></i> (11) 96610-5115</p>
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Transparência</h4>
+                            <p>Prestação de contas clara e acessível sobre o uso dos recursos.</p>
+                        </div>
                     </div>
                 </div>
             </div>
