@@ -481,6 +481,72 @@ nav ul li a:hover {
     border-color: var(--secondary-color);
 }
 
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.contact .section-description {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.contact .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.contact .form-group input,
+.contact .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.contact .form-group input:focus,
+.contact .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.contact .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact .form-group button {
+    width: 100%;
+    margin-top: 10px;
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
@@ -587,6 +653,15 @@ footer {
     
     .footer-social {
         justify-content: center;
+    }
+    
+    .contact {
+        padding: 70px 0;
+    }
+    
+    .contact .form-container {
+        padding: 20px;
+        margin: 0 20px;
     }
 }
 
