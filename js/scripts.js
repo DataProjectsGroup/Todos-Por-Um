@@ -28,6 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Contribution type toggle
+    const typeButtons = document.querySelectorAll('.type-btn');
+    const subscriptionInfo = document.querySelector('.subscription-info');
+    const submitButton = document.querySelector('.donation-form .btn');
+
+    typeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            typeButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Show/hide subscription info based on selection
+            if (this.dataset.type === 'subscription') {
+                subscriptionInfo.style.display = 'block';
+                submitButton.textContent = 'Assinar Agora';
+            } else {
+                subscriptionInfo.style.display = 'none';
+                submitButton.textContent = 'Doar Agora';
+            }
+        });
+    });
+
     // Botões de valor de doação
     const amountBtns = document.querySelectorAll('.amount-btn');
     const amountInput = document.getElementById('amount');
@@ -42,12 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.add('active');
                 
                 // Define o valor do input
-                const amount = this.textContent.replace('R$', '');
-                if (amount !== 'Outro') {
-                    amountInput.value = amount;
-                } else {
-                    amountInput.value = '';
+                if (this.textContent === 'Outro') {
                     amountInput.focus();
+                } else {
+                    const amount = this.textContent.replace('R$', '');
+                    amountInput.value = amount;
                 }
             });
         });

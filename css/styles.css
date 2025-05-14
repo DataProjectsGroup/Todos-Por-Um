@@ -471,7 +471,7 @@ nav ul li a:hover {
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s;
+    transition: all 0.3s ease;
 }
 
 .amount-btn:hover,
@@ -587,5 +587,56 @@ footer {
     
     .footer-social {
         justify-content: center;
+    }
+}
+
+.contribution-type {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.type-btn {
+    flex: 1;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid var(--background-color);
+    color: var(--background-color);
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.type-btn:hover,
+.type-btn.active {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    border-color: var(--secondary-color);
+}
+
+.subscription-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.subscription-info select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--background-color);
+}
+
+@media (max-width: 768px) {
+    .contribution-type {
+        flex-direction: column;
+    }
+    
+    .type-btn {
+        width: 100%;
     }
 }
