@@ -29,27 +29,48 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Contribution type toggle
-    const typeButtons = document.querySelectorAll('.type-btn');
+    const contributionButtons = document.querySelectorAll('.type-btn');
     const subscriptionInfo = document.querySelector('.subscription-info');
     const submitButton = document.querySelector('.donation-form .btn');
+    const paymentSelect = document.getElementById('payment');
+    const singlePaymentOptions = paymentSelect.querySelectorAll('.single-payment');
 
-    typeButtons.forEach(button => {
+    function updatePaymentOptions(isSubscription) {
+        singlePaymentOptions.forEach(option => {
+            option.style.display = isSubscription ? 'none' : '';
+        });
+        
+        // If subscription is selected and a single-payment option was selected, switch to credit card
+        if (isSubscription && paymentSelect.querySelector('.single-payment[selected]')) {
+            paymentSelect.value = 'credit';
+        }
+    }
+
+    contributionButtons.forEach(button => {
         button.addEventListener('click', function() {
             // Remove active class from all buttons
-            typeButtons.forEach(btn => btn.classList.remove('active'));
+            contributionButtons.forEach(btn => btn.classList.remove('active'));
+            
             // Add active class to clicked button
             this.classList.add('active');
             
-            // Show/hide subscription info based on selection
-            if (this.dataset.type === 'subscription') {
-                subscriptionInfo.style.display = 'block';
-                submitButton.textContent = 'Assinar Agora';
-            } else {
-                subscriptionInfo.style.display = 'none';
-                submitButton.textContent = 'Doar Agora';
-            }
+            const isSubscription = this.getAttribute('data-type') === 'subscription';
+            
+            // Show/hide subscription info
+            subscriptionInfo.style.display = isSubscription ? 'block' : 'none';
+            
+            // Update payment options
+            updatePaymentOptions(isSubscription);
         });
     });
+
+    // Initial setup
+    const activeButton = document.querySelector('.type-btn.active');
+    if (activeButton) {
+        const isSubscription = activeButton.getAttribute('data-type') === 'subscription';
+        subscriptionInfo.style.display = isSubscription ? 'block' : 'none';
+        updatePaymentOptions(isSubscription);
+    }
 
     // Botões de valor de doação
     const amountBtns = document.querySelectorAll('.amount-btn');
