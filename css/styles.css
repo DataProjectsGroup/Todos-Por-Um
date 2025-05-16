@@ -212,14 +212,31 @@ nav ul li a:hover {
 
 /* History section */
 .history-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.history-image {
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+.history-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    aspect-ratio: 16/9;
 }
 
 .history-text {
-    text-align: left;
-    max-width: 800px;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 /* Projects Section */
@@ -662,6 +679,25 @@ footer {
     .contact .form-container {
         padding: 20px;
         margin: 0 20px;
+    }
+    
+    .history-image {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .history-content {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .history-image {
+        margin-bottom: 20px;
+    }
+    
+    .history-image img {
+        border-radius: 6px;
     }
 }
 
