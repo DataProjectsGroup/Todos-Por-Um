@@ -1,15 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Efeito de rolagem na navegação
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
+    const header = document.querySelector('header');
+    
+    function handleScroll() {
         if (window.scrollY > 50) {
-            header.style.backgroundColor = '#fff';
-            header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            header.classList.add('scrolled');
         } else {
-            header.style.backgroundColor = '#fff';
-            header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            header.classList.remove('scrolled');
         }
-    });
+    }
+
+    // Initial check
+    handleScroll();
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
 
     // Rolagem suave para links de âncora
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

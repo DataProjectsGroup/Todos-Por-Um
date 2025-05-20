@@ -44,12 +44,17 @@ img {
 
 /* Header */
 header {
-    background-color: var(--background-color);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header .container {
@@ -73,6 +78,11 @@ header .container {
 .logo-text {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+header.scrolled .logo-text {
     color: var(--primary-color);
 }
 
@@ -86,9 +96,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--primary-color);
+    color: #fff;
     font-weight: 600;
     transition: color 0.3s;
+}
+
+header.scrolled nav ul li a {
+    color: var(--primary-color);
 }
 
 nav ul li a:hover {
@@ -99,7 +113,7 @@ nav ul li a:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--background-color);
+    background-color: #fff;
     min-width: 200px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1;
@@ -131,7 +145,9 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
     color: var(--background-color);
-    margin-top: 80px;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h2 {
