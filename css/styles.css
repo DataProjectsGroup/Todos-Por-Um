@@ -751,3 +751,57 @@ footer {
         width: 100%;
     }
 }
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding-bottom: 45%; /* More rectangular aspect ratio */
+    background: var(--accent-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+}
+
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid var(--primary-color);
+    border-radius: 15px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        margin: 2rem auto;
+        border-radius: 10px;
+        padding-bottom: 50%; /* Slightly more square on mobile */
+    }
+    
+    .video-container::before {
+        border-width: 2px;
+        border-radius: 10px;
+    }
+}
