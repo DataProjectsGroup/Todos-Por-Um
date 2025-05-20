@@ -1,15 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Efeito de rolagem na navegação
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
+    const header = document.querySelector('header');
+    
+    function handleScroll() {
         if (window.scrollY > 50) {
-            header.style.backgroundColor = '#fff';
-            header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            header.classList.add('scrolled');
         } else {
-            header.style.backgroundColor = '#fff';
-            header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            header.classList.remove('scrolled');
         }
-    });
+    }
+
+    // Initial check
+    handleScroll();
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
 
     // Rolagem suave para links de âncora
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -28,6 +33,50 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Contribution type toggle
+    const contributionButtons = document.querySelectorAll('.type-btn');
+    const subscriptionInfo = document.querySelector('.subscription-info');
+    const submitButton = document.querySelector('.donation-form .btn');
+    const paymentSelect = document.getElementById('payment');
+    const singlePaymentOptions = paymentSelect.querySelectorAll('.single-payment');
+
+    function updatePaymentOptions(isSubscription) {
+        singlePaymentOptions.forEach(option => {
+            option.style.display = isSubscription ? 'none' : '';
+        });
+        
+        // If subscription is selected and a single-payment option was selected, switch to credit card
+        if (isSubscription && paymentSelect.querySelector('.single-payment[selected]')) {
+            paymentSelect.value = 'credit';
+        }
+    }
+
+    contributionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            contributionButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const isSubscription = this.getAttribute('data-type') === 'subscription';
+            
+            // Show/hide subscription info
+            subscriptionInfo.style.display = isSubscription ? 'block' : 'none';
+            
+            // Update payment options
+            updatePaymentOptions(isSubscription);
+        });
+    });
+
+    // Initial setup
+    const activeButton = document.querySelector('.type-btn.active');
+    if (activeButton) {
+        const isSubscription = activeButton.getAttribute('data-type') === 'subscription';
+        subscriptionInfo.style.display = isSubscription ? 'block' : 'none';
+        updatePaymentOptions(isSubscription);
+    }
+
     // Botões de valor de doação
     const amountBtns = document.querySelectorAll('.amount-btn');
     const amountInput = document.getElementById('amount');
@@ -42,12 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.add('active');
                 
                 // Define o valor do input
-                const amount = this.textContent.replace('R$', '');
-                if (amount !== 'Outro') {
-                    amountInput.value = amount;
-                } else {
-                    amountInput.value = '';
+                if (this.textContent === 'Outro') {
                     amountInput.focus();
+                } else {
+                    const amount = this.textContent.replace('R$', '');
+                    amountInput.value = amount;
                 }
             });
         });
