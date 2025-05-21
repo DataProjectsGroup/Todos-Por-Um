@@ -444,10 +444,8 @@ nav ul li a:hover {
 /* Donation Section */
 .donation {
     padding: 100px 0;
-    background: linear-gradient(rgba(0, 121, 191, 0.9), rgba(0, 121, 191, 0.9)), url('../assets/donation-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: var(--background-color);
+    background: #fff;
+    color: var(--dark-color);
     text-align: center;
 }
 
