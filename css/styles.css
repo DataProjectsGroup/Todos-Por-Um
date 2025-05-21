@@ -463,7 +463,8 @@ nav ul li a:hover {
 .donation-form {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--primary-color);
+    color: #fff;
     padding: 30px;
     border-radius: 10px;
 }
@@ -476,6 +477,7 @@ nav ul li a:hover {
 .form-group label {
     display: block;
     margin-bottom: 8px;
+    color: #fff;
 }
 
 .form-group input,
