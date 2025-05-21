@@ -448,6 +448,7 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     color: var(--background-color);
+    background-color: var(--background-color);
     text-align: center;
 }
 
