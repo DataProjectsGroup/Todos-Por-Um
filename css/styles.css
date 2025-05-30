@@ -572,6 +572,11 @@ nav ul li a:hover {
     display: block;
 }
 
+/* Ajuste específico para a foto da Olga */
+.member-photo img[alt="Olga Pontes"] {
+    object-position: center 20%;
+}
+
 .member-info {
     padding: 20px;
     text-align: left;
