@@ -178,3 +178,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Function to toggle bio display
+function toggleBio(button) {
+    const memberInfo = button.parentElement;
+    const shortBio = memberInfo.querySelector('.member-bio-short');
+    const fullBio = memberInfo.querySelector('.member-bio-full');
+    
+    if (fullBio.style.display === 'none') {
+        shortBio.style.display = 'none';
+        fullBio.style.display = 'block';
+        button.textContent = 'Leia menos';
+    } else {
+        shortBio.style.display = 'block';
+        fullBio.style.display = 'none';
+        button.textContent = 'Leia mais';
+    }
+}

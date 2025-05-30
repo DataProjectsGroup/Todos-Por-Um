@@ -533,27 +533,29 @@ nav ul li a:hover {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .team-member {
     background: var(--background-color);
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--accent-color);
 }
 
 .team-member:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .member-photo {
     width: 100%;
-    height: 300px;
+    height: 280px;
     position: relative;
     overflow: hidden;
     background-color: var(--accent-color);
@@ -568,25 +570,51 @@ nav ul li a:hover {
 }
 
 .member-info {
-    padding: 30px;
+    padding: 25px;
     text-align: left;
 }
 
 .member-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
     color: var(--primary-color);
 }
 
 .member-title {
     font-weight: bold;
     color: var(--dark-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    font-size: 1rem;
 }
 
 .member-bio {
     margin-bottom: 20px;
     line-height: 1.6;
+}
+
+.member-bio-short,
+.member-bio-full {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.read-more-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.read-more-btn:hover {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    transform: translateY(-2px);
 }
 
 .member-contact {
@@ -1006,14 +1034,14 @@ footer {
 
 /* Transparency Section */
 .transparency {
-    padding: 80px 0;
+    padding: 100px 0;
     background-color: var(--light-color);
     text-align: center;
 }
 
 .transparency h2 {
-    font-size: 2.2rem;
-    margin-bottom: 40px;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
     color: var(--primary-color);
 }
 
@@ -1023,7 +1051,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 .transparency-text {
@@ -1031,45 +1059,54 @@ footer {
 }
 
 .transparency-text p {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
     color: var(--dark-color);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .transparency-image {
-    max-width: 300px;
+    max-width: 400px;
     width: 100%;
 }
 
 .transparency-image img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.transparency-image img:hover {
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
     .transparency {
-        padding: 60px 0;
+        padding: 70px 0;
     }
     
     .transparency h2 {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
+        font-size: 2rem;
+        margin-bottom: 40px;
     }
     
     .transparency-content {
-        gap: 25px;
+        gap: 30px;
+        padding: 0 20px;
     }
     
-    .transparency-text {
-        text-align: center;
-        padding: 0 15px;
+    .transparency-text p {
+        font-size: 1rem;
+        margin-bottom: 18px;
     }
     
     .transparency-image {
-        max-width: 200px;
+        max-width: 300px;
     }
 }
 
