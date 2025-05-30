@@ -177,27 +177,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
-    // Function to toggle bio display - moved inside DOMContentLoaded
-    window.toggleBio = function(button) {
-        const memberInfo = button.closest('.member-info');
-        const shortBio = memberInfo.querySelector('.member-bio-short');
-        const fullBio = memberInfo.querySelector('.member-bio-full');
-        
-        // Check if full bio is currently hidden
-        const isFullBioHidden = fullBio.style.display === 'none' || 
-                                window.getComputedStyle(fullBio).display === 'none';
-        
-        if (isFullBioHidden) {
-            shortBio.style.display = 'none';
-            fullBio.style.display = 'block';
-            button.textContent = 'Leia menos';
-            button.setAttribute('aria-expanded', 'true');
-        } else {
-            shortBio.style.display = 'block';
-            fullBio.style.display = 'none';
-            button.textContent = 'Leia mais';
-            button.setAttribute('aria-expanded', 'false');
-        }
-    };
 });
