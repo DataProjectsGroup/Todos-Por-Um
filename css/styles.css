@@ -587,15 +587,18 @@ nav ul li a:hover {
     font-size: 1rem;
 }
 
-.member-bio {
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
 .member-bio-short,
 .member-bio-full {
     margin-bottom: 15px;
     line-height: 1.6;
+}
+
+.member-bio-full {
+    display: none;
+}
+
+.member-bio-short {
+    display: block;
 }
 
 .read-more-btn {
