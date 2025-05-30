@@ -546,6 +546,9 @@ nav ul li a:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 2px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .team-member:hover {
@@ -572,6 +575,9 @@ nav ul li a:hover {
 .member-info {
     padding: 20px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .member-info h3 {
@@ -594,6 +600,7 @@ nav ul li a:hover {
     margin-bottom: 12px;
     line-height: 1.5;
     font-size: 0.9rem;
+    flex-grow: 1;
 }
 
 .member-bio-full {
@@ -602,6 +609,11 @@ nav ul li a:hover {
 
 .member-bio-short {
     display: block;
+}
+
+.member-actions {
+    margin-top: auto;
+    padding-top: 10px;
 }
 
 .read-more-btn {
@@ -615,6 +627,8 @@ nav ul li a:hover {
     cursor: pointer;
     margin-bottom: 12px;
     transition: background 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: fit-content;
 }
 
 .read-more-btn:hover {
