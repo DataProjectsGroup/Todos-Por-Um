@@ -1,0 +1,71 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /.htaccess
+Disallow: /README.md
+Disallow: /*.log
+Disallow: /*.bak
+Disallow: /*.inc
+Disallow: /config/
+Disallow: /temp/
+Disallow: /tmp/
+
+# Bloquear bots maliciosos
+User-agent: HTTrack
+Disallow: /
+
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: WebBandit
+Disallow: /
+
+User-agent: EmailWolf
+Disallow: /
+
+User-agent: ExtractorPro
+Disallow: /
+
+User-agent: CopyRightCheck
+Disallow: /
+
+User-agent: SiteSucker
+Disallow: /
+
+User-agent: WebCopier
+Disallow: /
+
+User-agent: Offline Explorer
+Disallow: /
+
+User-agent: TeleportPro
+Disallow: /
+
+User-agent: WebZIP
+Disallow: /
+
+User-agent: Website Downloader
+Disallow: /
+
+User-agent: WebReaper
+Disallow: /
+
+User-agent: WebAuto
+Disallow: /
+
+User-agent: WebCopy
+Disallow: /
+
+User-agent: Wget
+Disallow: /
+
+User-agent: curl
+Disallow: /
+
+User-agent: libwww
+Disallow: /
+
+Sitemap: https://dataprojectsgroup.github.io/Projeto-Todos-Por-Um/sitemap.xml 
