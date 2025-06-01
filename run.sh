@@ -37,7 +37,7 @@ fi
 
 # Executar o container
 echo "🚀 Iniciando container..."
-if docker run -d -p 8080:80 --name donation-site donation-daniel; then
+if docker run -d -p 80:80 --name donation-site donation-daniel; then
     echo "✅ Container iniciado com sucesso!"
 else
     echo "❌ Erro ao iniciar container!"
@@ -50,7 +50,7 @@ sleep 5
 
 # Verificar se está funcionando
 echo "🔍 Verificando se o servidor está respondendo..."
-if curl -s -o /dev/null -w "%{http_code}" http://localhost:8080 | grep -q "200\|301\|302"; then
+if curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1 | grep -q "200\|301\|302"; then
     echo "✅ Servidor está funcionando!"
 else
     echo "⚠️ Servidor pode estar iniciando ainda..."
