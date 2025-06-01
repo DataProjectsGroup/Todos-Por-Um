@@ -1214,6 +1214,26 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 121, 191, 0.3);
 }
 
+.media-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.media-link:hover {
+    transform: translateY(-5px);
+}
+
+.media-link:hover h3 {
+    color: var(--secondary-color);
+}
+
+.media-link .btn-secondary {
+    display: inline-block;
+    margin-top: 15px;
+}
+
 @media (max-width: 768px) {
     .media {
         padding: 70px 0;
