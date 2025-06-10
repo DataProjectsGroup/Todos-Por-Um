@@ -222,20 +222,21 @@
             <p class="section-description">Entre em contato conosco. Sua mensagem é muito importante.</p>
             
             <div class="form-container">
+                <div id="form-message" class="form-message" style="display: none;"></div>
                 <form id="contactForm">
                     <div class="form-group">
                         <label for="contact-name">Nome Completo</label>
-                        <input type="text" id="contact-name" name="name" required>
+                        <input  id="contact-name"  name="name"    required>
                     </div>
                     
                     <div class="form-group">
                         <label for="contact-email">Email</label>
-                        <input type="email" id="contact-email" name="email" required>
+                        <input  id="contact-email" name="email"   required>
                     </div>
                     
                     <div class="form-group">
                         <label for="contact-subject">Assunto</label>
-                        <input type="text" id="contact-subject" name="subject" required>
+                        <input  id="contact-subject" name="subject" required>
                     </div>
                     
                     <div class="form-group">
@@ -310,6 +311,38 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+    (() => emailjs.init("8JUwarxpMADvH5Ts_"))();   // seu Public Key v3
+
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const msg = document.getElementById('form-message');
+        btn.disabled = true; btn.textContent = 'Enviando...';
+
+        // ENVIA
+        emailjs.sendForm('service_c7zff4k', 'template_5tyz9r2', contactForm)
+        .then(() => {
+            msg.textContent = 'Mensagem enviada com sucesso!';
+            msg.className = 'form-message success';   msg.style.display = 'block';
+            contactForm.reset();           msg.scrollIntoView({behavior:'smooth'});
+        })
+        .catch((err) => {
+            console.error(err);
+            msg.textContent = 'Erro ao enviar. Tente novamente.';
+            msg.className = 'form-message error';     msg.style.display = 'block';
+        })
+        .finally(() => { btn.disabled = false; btn.textContent = 'Enviar Mensagem'; });
+    });
+    </script>
     <script src="js/scripts.js"></script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511966105115" target="_blank" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>
