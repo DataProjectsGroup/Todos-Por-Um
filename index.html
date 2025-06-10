@@ -313,7 +313,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-    (() => emailjs.init("NU38dlOW9AvAsPFkq"))();   // seu Public Key v3
+    (() => emailjs.init("8JUwarxpMADvH5Ts_"))();   // seu Public Key v3
 
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', (e) => {
@@ -324,7 +324,7 @@
         btn.disabled = true; btn.textContent = 'Enviando...';
 
         // ENVIA
-        emailjs.sendForm('service_solzm1l', 'template_t92sqy2', contactForm)
+        emailjs.sendForm('service_c7zff4k', 'template_5tyz9r2', contactForm)
         .then(() => {
             msg.textContent = 'Mensagem enviada com sucesso!';
             msg.className = 'form-message success';   msg.style.display = 'block';
