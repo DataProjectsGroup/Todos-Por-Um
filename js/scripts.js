@@ -177,4 +177,53 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Contact form submission with EmailJS
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            const formMessage = document.getElementById('form-message');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+            
+            const templateParams = {
+                name: document.getElementById('contact-name').value,
+                email: document.getElementById('contact-email').value,
+                subject: document.getElementById('contact-subject').value,
+                message: document.getElementById('contact-message').value,
+                time: new Date().toLocaleString('pt-BR', {
+                    timeZone: 'America/Sao_Paulo',
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                })
+            };
+            
+            emailjs.send('service_solzm1l', 'template_t92sqy2', templateParams)
+                .then(function() {
+                    formMessage.textContent = 'Mensagem enviada com sucesso! Em breve entraremos em contato.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    contactForm.reset();
+                    
+                    // Scroll to the message
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                })
+                .catch(function(error) {
+                    formMessage.textContent = 'Erro ao enviar mensagem. Por favor, tente novamente.';
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                    console.error('EmailJS error:', error);
+                })
+                .finally(function() {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Enviar Mensagem';
+                });
+        });
+    }
 });
