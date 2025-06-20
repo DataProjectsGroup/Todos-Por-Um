@@ -83,11 +83,11 @@ echo ""
 echo "4️⃣ VERIFICANDO NOSSO SITE"
 echo "-----------------------------------"
 
-if [ -L "/etc/nginx/sites-enabled/todos-por-um" ]; then
+if [ -L "/etc/nginx/sites-enabled/000-todos-por-um" ]; then
     echo "✅ Site todos-por-um está habilitado"
 else
     echo "🔧 Habilitando site todos-por-um..."
-    ln -sf /etc/nginx/sites-available/todos-por-um /etc/nginx/sites-enabled/
+    ln -sf /etc/nginx/sites-available/000-todos-por-um /etc/nginx/sites-enabled/
     echo "✅ Site habilitado"
 fi
 
