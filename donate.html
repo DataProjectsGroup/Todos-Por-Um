@@ -8,15 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="assets/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <style>
-        body, input, select, button, textarea {
-            font-family: 'Lato', Arial, sans-serif !important;
-        }
-        header .logo-text,
-        header nav ul li a {
-            color: var(--primary-color) !important;
-        }
-    </style>
+    <!-- Stripe JS -->
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <header>
@@ -43,66 +36,307 @@
                         </div>
                     </li>
                     <li><a href="index.html#plano-futuro">Nosso Plano de Futuro</a></li>
-                    <li><a href="donate.html">Doe/Assine</a></li>
+                    <li><a href="donate.html" class="active">Doe/Assine</a></li>
                     <li><a href="index.html#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="donation">
+    <div style="margin-top: 100px;"></div>
+
+    <section class="donation-hero">
         <div class="container">
-            <h2>Faça uma Doação ou Assine</h2>
-            <p>Seu apoio é fundamental para continuarmos nosso trabalho de acolhimento às crianças e adolescentes em situação de vulnerabilidade.</p>
-            <div class="donation-form">
-                <form>
-                    <div class="form-group">
-                        <label>Tipo de Contribuição</label>
-                        <div class="contribution-type">
-                            <button type="button" class="type-btn active" data-type="single">Doação Única</button>
-                            <button type="button" class="type-btn" data-type="subscription">Assinatura Mensal</button>
+            <h1>Doe/Assine e Transforme Vidas</h1>
+            <p>Seu apoio é fundamental para continuarmos nosso trabalho de acolhimento às crianças e adolescentes em situação de vulnerabilidade social.</p>
+            <p class="donation-subtitle">Escolha a forma de contribuição que melhor atende às suas necessidades</p>
+        </div>
+    </section>
+
+    <section class="donation-methods">
+        <div class="container">
+            <!-- Seletor de Tipo de Contribuição -->
+            <div class="contribution-type-selector">
+                <h2>Tipo de Contribuição</h2>
+                <div class="type-buttons">
+                    <button class="type-btn active" data-type="single">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>Doação Única</span>
+                    </button>
+                    <button class="type-btn" data-type="subscription">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Assinatura Mensal</span>
+                    </button>
+                </div>
+                <div class="subscription-info" style="display: none;">
+                    <div class="subscription-benefits">
+                        <h3>Benefícios da Assinatura:</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Impacto contínuo e sustentável</li>
+                            <li><i class="fas fa-check"></i> Relatórios mensais de atividades</li>
+                            <li><i class="fas fa-check"></i> Acesso prioritário a eventos</li>
+                            <li><i class="fas fa-check"></i> Certificado de doador recorrente</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seletor de Valores -->
+            <div class="amount-selector">
+                <h2>Valor da Contribuição</h2>
+                <div class="amount-grid">
+                    <button class="amount-option" data-amount="10">R$ 10</button>
+                    <button class="amount-option" data-amount="30">R$ 30</button>
+                    <button class="amount-option active" data-amount="50">R$ 50</button>
+                    <button class="amount-option" data-amount="100">R$ 100</button>
+                    <button class="amount-option custom" data-amount="custom">Outro Valor</button>
+                </div>
+                <div class="custom-amount" style="display: none;">
+                    <input type="number" id="customAmount" placeholder="Digite o valor em reais" min="1" step="0.01">
+                </div>
+                <div class="amount-impact">
+                    <p id="impactText">Com R$ 50, você ajuda a custear um dia de alimentação para uma criança.</p>
+                </div>
+            </div>
+
+            <!-- Métodos de Pagamento -->
+            <div class="payment-methods">
+                <h2>Método de Pagamento</h2>
+                
+                <!-- PIX -->
+                <div class="payment-method" id="pix-method">
+                    <div class="method-header" data-method="pix">
+                        <div class="method-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <div class="method-info">
+                            <h3>PIX</h3>
+                            <p>Transferência instantânea e gratuita</p>
+                        </div>
+                        <div class="method-select">
+                            <input type="radio" name="payment" value="pix" id="pix-radio">
+                            <label for="pix-radio"></label>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="amount">Valor da Contribuição</label>
-                        <div class="amount-options">
-                            <button type="button" class="amount-btn">R$25</button>
-                            <button type="button" class="amount-btn">R$50</button>
-                            <button type="button" class="amount-btn active">R$100</button>
-                            <button type="button" class="amount-btn">R$200</button>
-                            <button type="button" class="amount-btn">Outro</button>
+                    <div class="method-content" style="display: none;">
+                        <div class="pix-container">
+                            <div class="pix-info">
+                                <h4>Dados para PIX</h4>
+                                <div class="pix-key">
+                                    <label>Chave PIX:</label>
+                                    <div class="key-display">
+                                        <span id="pixKey">contato@todospor1.org</span>
+                                        <button class="copy-btn" onclick="copyPixKey()">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="pix-details">
+                                    <p><strong>Beneficiário:</strong> Obras Sociais Todos por Um</p>
+                                    <p><strong>CNPJ:</strong> [CNPJ A SER PREENCHIDO]</p>
+                                </div>
+                            </div>
+                            <div class="pix-qr">
+                                <h4>QR Code</h4>
+                                <div class="qr-placeholder">
+                                    <i class="fas fa-qrcode"></i>
+                                    <p>QR Code será gerado aqui</p>
+                                    <small>Aguardando integração com sistema de pagamentos</small>
+                                </div>
+                            </div>
                         </div>
-                        <input type="number" id="amount" name="amount" placeholder="Valor Personalizado" value="100">
+                        <div class="pix-instructions">
+                            <h4>Como fazer a doação via PIX:</h4>
+                            <ol>
+                                <li>Abra o app do seu banco</li>
+                                <li>Escolha a opção PIX</li>
+                                <li>Escaneie o QR Code ou cole a chave PIX</li>
+                                <li>Confirme o valor e complete a transação</li>
+                            </ol>
+                        </div>
                     </div>
-                    <div class="form-group subscription-info" style="display: none;">
-                        <label for="subscription-period">Período de Assinatura</label>
-                        <select id="subscription-period" name="subscription-period">
-                            <option value="6">6 meses</option>
-                            <option value="12" selected>12 meses</option>
-                            <option value="24">24 meses</option>
-                            <option value="0">Sem prazo definido</option>
-                        </select>
+                </div>
+
+                <!-- Transferência Bancária -->
+                <div class="payment-method" id="bank-method">
+                    <div class="method-header" data-method="bank">
+                        <div class="method-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="method-info">
+                            <h3>Transferência Bancária</h3>
+                            <p>Depósito ou transferência tradicional</p>
+                        </div>
+                        <div class="method-select">
+                            <input type="radio" name="payment" value="bank" id="bank-radio">
+                            <label for="bank-radio"></label>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="name">Nome Completo</label>
-                        <input type="text" id="name" name="name" required>
+                    <div class="method-content" style="display: none;">
+                        <div class="bank-info">
+                            <h4>Dados Bancários</h4>
+                            <div class="bank-details">
+                                <div class="bank-field">
+                                    <label>Banco:</label>
+                                    <span>[NOME DO BANCO A SER PREENCHIDO]</span>
+                                </div>
+                                <div class="bank-field">
+                                    <label>Agência:</label>
+                                    <span>[NÚMERO DA AGÊNCIA]</span>
+                                </div>
+                                <div class="bank-field">
+                                    <label>Conta Corrente:</label>
+                                    <span>[NÚMERO DA CONTA]</span>
+                                </div>
+                                <div class="bank-field">
+                                    <label>CNPJ:</label>
+                                    <span>[CNPJ DA ORGANIZAÇÃO]</span>
+                                </div>
+                                <div class="bank-field">
+                                    <label>Beneficiário:</label>
+                                    <span>Obras Sociais Todos por Um</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bank-instructions">
+                            <h4>Instruções para transferência:</h4>
+                            <ol>
+                                <li>Utilize os dados bancários acima</li>
+                                <li>Faça a transferência pelo valor desejado</li>
+                                <li>Envie o comprovante para: contato@todospor1.org</li>
+                                <li>Aguarde a confirmação e o recibo fiscal</li>
+                            </ol>
+                            <div class="bank-note">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Importante: Envie sempre o comprovante de depósito para que possamos emitir o recibo fiscal.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Cartão de Crédito -->
+                <div class="payment-method" id="credit-method">
+                    <div class="method-header" data-method="credit">
+                        <div class="method-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="method-info">
+                            <h3>Cartão de Crédito</h3>
+                            <p>Pagamento seguro via Stripe</p>
+                        </div>
+                        <div class="method-select">
+                            <input type="radio" name="payment" value="credit" id="credit-radio" checked>
+                            <label for="credit-radio"></label>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="payment">Método de Pagamento</label>
-                        <select id="payment" name="payment">
-                            <option value="credit">Cartão de Crédito</option>
-                            <option value="pix" class="single-payment">PIX</option>
-                            <option value="bank" class="single-payment">Transferência Bancária</option>
-                        </select>
+                    <div class="method-content credit-form" style="display: block;">
+                        <form id="payment-form" class="stripe-form">
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="donor-name">Nome Completo do Doador</label>
+                                    <input type="text" id="donor-name" name="donor-name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="donor-email">Email</label>
+                                    <input type="email" id="donor-email" name="donor-email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="donor-phone">Telefone (opcional)</label>
+                                    <input type="tel" id="donor-phone" name="donor-phone" placeholder="(11) 99999-9999">
+                                </div>
+                            </div>
+
+                            <!-- Stripe Card Element será inserido aqui -->
+                            <div class="form-group full-width">
+                                <label for="card-element">Dados do Cartão</label>
+                                <div id="card-element" class="stripe-card-element">
+                                    <!-- Elemento do cartão do Stripe -->
+                                </div>
+                                <div id="card-errors" role="alert" class="stripe-errors"></div>
+                            </div>
+
+                            <!-- Período de assinatura (apenas para assinaturas) -->
+                            <div class="subscription-period" style="display: none;">
+                                <div class="form-group full-width">
+                                    <label for="subscription-duration">Período da Assinatura</label>
+                                    <select id="subscription-duration" name="subscription-duration">
+                                        <option value="indefinite">Sem prazo definido</option>
+                                        <option value="6">6 meses</option>
+                                        <option value="12" selected>12 meses</option>
+                                        <option value="24">24 meses</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="payment-summary">
+                                <div class="summary-line">
+                                    <span>Valor:</span>
+                                    <span id="payment-amount">R$ 50,00</span>
+                                </div>
+                                <div class="summary-line subscription-line" style="display: none;">
+                                    <span>Frequência:</span>
+                                    <span>Mensal</span>
+                                </div>
+                                <div class="summary-line total-line">
+                                    <span>Total:</span>
+                                    <span id="payment-total">R$ 50,00</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" id="submit-payment" class="payment-submit-btn">
+                                <span id="button-text">Doar R$ 50,00</span>
+                                <div id="spinner" class="spinner hidden"></div>
+                            </button>
+                        </form>
+
+                        <!-- Configuração do Stripe (para desenvolvedor) -->
+                        <div class="stripe-config" style="display: none;">
+                            <h4>Configuração do Stripe</h4>
+                            <p>Para ativar os pagamentos via cartão de crédito:</p>
+                            <ol>
+                                <li>Crie uma conta no <a href="https://stripe.com" target="_blank">Stripe</a></li>
+                                <li>Obtenha suas chaves da API (Publishable Key e Secret Key)</li>
+                                <li>Substitua 'pk_test_...' pela sua Publishable Key no JavaScript</li>
+                                <li>Configure o webhook para receber notificações de pagamento</li>
+                                <li>Implemente o backend para processar os pagamentos</li>
+                            </ol>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn">Contribuir Agora</button>
+                </div>
+            </div>
+
+            <!-- Segurança e Informações -->
+            <div class="security-info">
+                <div class="security-badges">
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Pagamento 100% Seguro</span>
                     </div>
-                </form>
+                    <div class="badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Dados Criptografados</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>Recibo Fiscal</span>
+                    </div>
+                </div>
+                <div class="donation-info">
+                    <h3>Informações Importantes</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Todas as doações são dedutíveis do Imposto de Renda</li>
+                        <li><i class="fas fa-check"></i> Você receberá um recibo fiscal por email</li>
+                        <li><i class="fas fa-check"></i> 100% dos recursos vão diretamente para os projetos</li>
+                        <li><i class="fas fa-check"></i> Você pode cancelar assinaturas a qualquer momento</li>
+                        <li><i class="fas fa-check"></i> Relatórios de transparência enviados mensalmente</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -130,6 +364,212 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511966105115" target="_blank" class="floating-whatsapp">
+        <img src="assets/logo-wpp.png" alt="WhatsApp" style="height:35px;width:35px;" />
+    </a>
+
     <script src="js/scripts.js"></script>
+    <script>
+        // Inicialização do Stripe
+        // IMPORTANTE: Substitua pela sua Publishable Key do Stripe
+        const stripe = Stripe('pk_test_51..._YOUR_PUBLISHABLE_KEY_HERE');
+        const elements = stripe.elements();
+
+        // Variáveis globais
+        let currentAmount = 50;
+        let isSubscription = false;
+
+        // Elementos do DOM
+        const typeButtons = document.querySelectorAll('.type-btn');
+        const subscriptionInfo = document.querySelector('.subscription-info');
+        const subscriptionPeriod = document.querySelector('.subscription-period');
+        const amountOptions = document.querySelectorAll('.amount-option');
+        const customAmountDiv = document.querySelector('.custom-amount');
+        const customAmountInput = document.getElementById('customAmount');
+        const impactText = document.getElementById('impactText');
+        const paymentAmount = document.getElementById('payment-amount');
+        const paymentTotal = document.getElementById('payment-total');
+        const buttonText = document.getElementById('button-text');
+        const subscriptionLine = document.querySelector('.subscription-line');
+
+        // Configuração do elemento do cartão
+        const cardElement = elements.create('card', {
+            style: {
+                base: {
+                    fontSize: '16px',
+                    color: '#424770',
+                    '::placeholder': {
+                        color: '#aab7c4',
+                    },
+                },
+                invalid: {
+                    color: '#9e2146',
+                },
+            },
+        });
+
+        cardElement.mount('#card-element');
+
+        // Manipuladores de eventos
+        cardElement.on('change', function(event) {
+            const displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        // Tipo de contribuição
+        typeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                typeButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                isSubscription = this.dataset.type === 'subscription';
+                subscriptionInfo.style.display = isSubscription ? 'block' : 'none';
+                subscriptionPeriod.style.display = isSubscription ? 'block' : 'none';
+                subscriptionLine.style.display = isSubscription ? 'flex' : 'none';
+                
+                updatePaymentDisplay();
+            });
+        });
+
+        // Seleção de valores
+        amountOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                amountOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                
+                if (this.dataset.amount === 'custom') {
+                    customAmountDiv.style.display = 'block';
+                    customAmountInput.focus();
+                } else {
+                    customAmountDiv.style.display = 'none';
+                    currentAmount = parseInt(this.dataset.amount);
+                    updatePaymentDisplay();
+                }
+            });
+        });
+
+        customAmountInput.addEventListener('input', function() {
+            if (this.value && this.value > 0) {
+                currentAmount = parseFloat(this.value);
+                updatePaymentDisplay();
+            }
+        });
+
+        // Seleção de método de pagamento
+        document.querySelectorAll('.method-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const method = this.dataset.method;
+                const radio = document.getElementById(method + '-radio');
+                
+                // Desmarcar todos os outros
+                document.querySelectorAll('input[name="payment"]').forEach(r => r.checked = false);
+                document.querySelectorAll('.method-content').forEach(c => c.style.display = 'none');
+                
+                // Marcar o selecionado
+                radio.checked = true;
+                this.nextElementSibling.style.display = 'block';
+            });
+        });
+
+        // Função para atualizar exibição de pagamento
+        function updatePaymentDisplay() {
+            const formattedAmount = currentAmount.toLocaleString('pt-BR', { 
+                style: 'currency', 
+                currency: 'BRL' 
+            });
+            
+            paymentAmount.textContent = formattedAmount;
+            paymentTotal.textContent = formattedAmount;
+            
+            if (isSubscription) {
+                buttonText.textContent = `Assinar ${formattedAmount}/mês`;
+            } else {
+                buttonText.textContent = `Doar ${formattedAmount}`;
+            }
+            
+            updateImpactText();
+        }
+
+        // Função para atualizar texto de impacto
+        function updateImpactText() {
+            let impact = '';
+            if (currentAmount >= 100) {
+                impact = `Com ${currentAmount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}, você ajuda a custear uma semana de alimentação para uma criança.`;
+            } else if (currentAmount >= 50) {
+                impact = `Com ${currentAmount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}, você ajuda a custear material escolar para uma criança.`;
+            } else if (currentAmount >= 30) {
+                impact = `Com ${currentAmount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}, você ajuda a custear um dia de alimentação para uma criança.`;
+            } else {
+                impact = `Com ${currentAmount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}, você contribui para atividades educacionais.`;
+            }
+            impactText.textContent = impact;
+        }
+
+        // Função para copiar chave PIX
+        function copyPixKey() {
+            const pixKey = document.getElementById('pixKey').textContent;
+            navigator.clipboard.writeText(pixKey).then(() => {
+                const copyBtn = document.querySelector('.copy-btn');
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+
+        // Processamento do formulário de pagamento
+        const form = document.getElementById('payment-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const submitButton = document.getElementById('submit-payment');
+            const spinner = document.getElementById('spinner');
+            const buttonTextEl = document.getElementById('button-text');
+
+            submitButton.disabled = true;
+            spinner.classList.remove('hidden');
+            buttonTextEl.textContent = 'Processando...';
+
+            // Aqui você implementaria a integração com Stripe
+            // Este é um exemplo básico - você precisa criar um backend para processar os pagamentos
+
+            // Simulação de processamento
+            setTimeout(() => {
+                alert('Função de pagamento em desenvolvimento. Integração com Stripe será implementada no backend.');
+                
+                submitButton.disabled = false;
+                spinner.classList.add('hidden');
+                updatePaymentDisplay();
+            }, 2000);
+
+            // Código real do Stripe seria algo assim:
+            /*
+            const {token, error} = await stripe.createToken(cardElement);
+            
+            if (error) {
+                // Mostrar erro
+                document.getElementById('card-errors').textContent = error.message;
+                submitButton.disabled = false;
+                spinner.classList.add('hidden');
+                updatePaymentDisplay();
+            } else {
+                // Enviar token para seu backend
+                stripeTokenHandler(token);
+            }
+            */
+        });
+
+        // Inicialização
+        updatePaymentDisplay();
+
+        // Fazer função copyPixKey global
+        window.copyPixKey = copyPixKey;
+    </script>
 </body>
 </html>
