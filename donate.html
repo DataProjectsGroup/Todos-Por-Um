@@ -68,21 +68,6 @@
                 </div>
             </div>
 
-            <!-- Seletor de Valores -->
-            <div class="amount-selector">
-                <h2>Valor da Contribuição</h2>
-                <div class="amount-grid">
-                    <button class="amount-option" data-amount="10">R$ 10</button>
-                    <button class="amount-option" data-amount="30">R$ 30</button>
-                    <button class="amount-option active" data-amount="50">R$ 50</button>
-                    <button class="amount-option" data-amount="100">R$ 100</button>
-                    <button class="amount-option custom" data-amount="custom">Outro Valor</button>
-                </div>
-                <div class="custom-amount" style="display: none;">
-                    <input type="number" id="customAmount" placeholder="Digite o valor em reais" min="1" step="0.01">
-                </div>
-            </div>
-
             <!-- Métodos de Pagamento -->
             <div class="payment-methods">
                 <h2>Método de Pagamento</h2>
@@ -338,14 +323,10 @@
     <script src="js/scripts.js"></script>
     <script>
         // Variáveis globais
-        let currentAmount = 50;
         let isSubscription = false;
 
         // Elementos do DOM
         const typeButtons = document.querySelectorAll('.type-btn');
-        const amountOptions = document.querySelectorAll('.amount-option');
-        const customAmountDiv = document.querySelector('.custom-amount');
-        const customAmountInput = document.getElementById('customAmount');
         const singlePaymentMethods = document.querySelectorAll('.single-payment');
         const singlePaymentLinks = document.querySelector('.single-payment-links');
         const subscriptionPaymentLinks = document.querySelector('.subscription-payment-links');
@@ -375,28 +356,6 @@
                     document.querySelector('#credit-method .method-content').style.display = 'block';
                 }
             });
-        });
-
-        // Seleção de valores
-        amountOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                amountOptions.forEach(opt => opt.classList.remove('active'));
-                this.classList.add('active');
-                
-                if (this.dataset.amount === 'custom') {
-                    customAmountDiv.style.display = 'block';
-                    customAmountInput.focus();
-                } else {
-                    customAmountDiv.style.display = 'none';
-                    currentAmount = parseInt(this.dataset.amount);
-                }
-            });
-        });
-
-        customAmountInput.addEventListener('input', function() {
-            if (this.value && this.value > 0) {
-                currentAmount = parseFloat(this.value);
-            }
         });
 
         // Seleção de método de pagamento
