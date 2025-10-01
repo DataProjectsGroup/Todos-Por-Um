@@ -811,7 +811,7 @@
                 <div class="type-buttons">
                     <button class="type-btn active" data-type="single">
                         <i class="fas fa-hand-holding-heart"></i>
-                        <span>Doação Única</span>
+                        <span>Doação Avulsa</span>
                     </button>
                     <button class="type-btn" data-type="subscription">
                         <i class="fas fa-calendar-alt"></i>
@@ -823,6 +823,68 @@
             <!-- Métodos de Pagamento -->
             <div class="payment-methods">
                 <h2>Método de Pagamento</h2>
+                <!-- Segurança e Informações -->
+            <div class="security-info">
+                <div class="security-badges">
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Pagamento 100% Seguro</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Dados Criptografados</span>
+                    </div>
+                </div>
+            </div>
+                <!-- Cartão de Crédito (Stripe Payment Links) -->
+                <div class="payment-method" id="credit-method">
+                    <div class="method-header" data-method="credit">
+                        <div class="method-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="method-info">
+                            <h3>Cartão de Crédito</h3>
+                            <p>Pagamento seguro via Stripe</p>
+                        </div>
+                        <div class="method-select">
+                            <input type="radio" name="payment" value="credit" id="credit-radio" checked>
+                            <label for="credit-radio"></label>
+                        </div>
+                    </div>
+                    <div class="method-content stripe-links" style="display: block;">
+                        <!-- Links para Doação Avulsa -->
+                        <div class="single-payment-links">
+                            <h4>Doação Avulsa</h4>
+                            <div class="donation-description">
+                                <p>Faça sua doação de qualquer valor através do nosso link seguro de pagamento. Você poderá escolher o valor desejado no momento do pagamento.</p>
+                            </div>
+                            <div class="custom-amount-link">
+                                <a href="https://buy.stripe.com/4gM6oG1P3aS39vab3X53O03" target="_blank" class="payment-link custom-link">
+                                    <span>Fazer Doação</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <p class="custom-link-note">Clique para fazer sua doação com segurança</p>
+                            </div>
+                        </div>
+
+                        <!-- Links para Assinatura Mensal -->
+                        <div class="subscription-payment-links" style="display: none;">
+                            <h4>Assinatura Mensal</h4>
+                            <div class="payment-links-grid">
+                                <a href="https://buy.stripe.com/6oU8wObpD6BNbDic8153O00" target="_blank" class="payment-link subscription-link">
+                                    <span class="amount">Contribuição Associativa (para associados efetivos)</span>
+                                    <span class="monthly-amount">R$ 140,00/mês</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://buy.stripe.com/5kQ8wO0KZe4f8r65JD53O05 " target="_blank" class="payment-link subscription-link">
+                                    <span class="amount">Contribuição Mensal Simbólica (para o público)</span>
+                                    <span class="monthly-amount">R$ 10,00/mês (por Qtd)</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- PIX -->
                 <div class="payment-method single-payment" id="pix-method">
@@ -928,70 +990,6 @@
                                 <li>Envie o comprovante para: contato@todospor1.org</li>
                             </ol>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Cartão de Crédito (Stripe Payment Links) -->
-                <div class="payment-method" id="credit-method">
-                    <div class="method-header" data-method="credit">
-                        <div class="method-icon">
-                            <i class="fas fa-credit-card"></i>
-                        </div>
-                        <div class="method-info">
-                            <h3>Cartão de Crédito</h3>
-                            <p>Pagamento seguro via Stripe</p>
-                        </div>
-                        <div class="method-select">
-                            <input type="radio" name="payment" value="credit" id="credit-radio" checked>
-                            <label for="credit-radio"></label>
-                        </div>
-                    </div>
-                    <div class="method-content stripe-links" style="display: block;">
-                        <!-- Links para Doação Única -->
-                        <div class="single-payment-links">
-                            <h4>Doação Única</h4>
-                            <div class="donation-description">
-                                <p>Faça sua doação de qualquer valor através do nosso link seguro de pagamento. Você poderá escolher o valor desejado no momento do pagamento.</p>
-                            </div>
-                            <div class="custom-amount-link">
-                                <a href="https://buy.stripe.com/4gM6oG1P3aS39vab3X53O03" target="_blank" class="payment-link custom-link">
-                                    <span>Fazer Doação</span>
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <p class="custom-link-note">Clique para fazer sua doação com segurança</p>
-                            </div>
-                        </div>
-
-                        <!-- Links para Assinatura Mensal -->
-                        <div class="subscription-payment-links" style="display: none;">
-                            <h4>Assinatura Mensal</h4>
-                            <div class="payment-links-grid">
-                                <a href="https://buy.stripe.com/6oU8wObpD6BNbDic8153O00" target="_blank" class="payment-link subscription-link">
-                                    <span class="amount">Contribuição Associativa (para associados efetivos)</span>
-                                    <span class="monthly-amount">R$ 140,00/mês</span>
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="https://buy.stripe.com/5kQ8wO0KZe4f8r65JD53O05 " target="_blank" class="payment-link subscription-link">
-                                    <span class="amount">Contribuição Mensal Simbólica (para o público)</span>
-                                    <span class="monthly-amount">R$ 10,00/mês (por Qtd)</span>
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Segurança e Informações -->
-            <div class="security-info">
-                <div class="security-badges">
-                    <div class="badge">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Pagamento 100% Seguro</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-lock"></i>
-                        <span>Dados Criptografados</span>
                     </div>
                 </div>
             </div>
