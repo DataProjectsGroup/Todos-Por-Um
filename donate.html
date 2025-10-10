@@ -212,6 +212,66 @@
             font-weight: 600;
         }
         
+        /* Payment Options Selector */
+        .payment-options-selector {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .payment-options-selector h2 {
+            font-size: 2rem;
+            color: #0079BF;
+            margin-bottom: 30px;
+        }
+        
+        .payment-options-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .payment-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 15px;
+            background: white;
+            border: 3px solid #e9ecef;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 150px;
+        }
+        
+        .payment-option:hover {
+            border-color: #0079BF;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 121, 191, 0.15);
+        }
+        
+        .payment-option.active {
+            border-color: #0079BF;
+            background: #f8f9fa;
+            box-shadow: 0 5px 20px rgba(0, 121, 191, 0.2);
+        }
+        
+        .payment-option img {
+            max-width: 80px;
+            height: auto;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+        
+        .payment-option span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+        }
+        
         /* Payment Methods */
         .payment-methods h2 {
             font-size: 2.2rem;
@@ -680,6 +740,20 @@
                 min-width: 250px;
             }
             
+            .payment-options-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .payment-option {
+                min-height: 120px;
+                padding: 20px 10px;
+            }
+            
+            .payment-option img {
+                max-width: 60px;
+            }
+            
             .pix-container {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -723,6 +797,24 @@
             .type-btn {
                 min-width: 200px;
                 padding: 25px 30px;
+            }
+            
+            .payment-options-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            
+            .payment-option {
+                min-height: 110px;
+                padding: 15px 8px;
+            }
+            
+            .payment-option img {
+                max-width: 50px;
+            }
+            
+            .payment-option span {
+                font-size: 0.9rem;
             }
             
             .floating-whatsapp {
@@ -809,20 +901,44 @@
             <div class="contribution-type-selector">
                 <h2>Tipo de Contribuição</h2>
                 <div class="type-buttons">
-                    <button class="type-btn active" data-type="single">
+                    <button class="type-btn active" data-type="member">
+                        <i class="fas fa-star"></i>
+                        <span>Associado</span>
+                        <small style="font-size: 0.9rem; margin-top: 5px; opacity: 0.9;">A partir de R$140,00/mês</small>
+                    </button>
+                    <button class="type-btn" data-type="non-member">
                         <i class="fas fa-hand-holding-heart"></i>
-                        <span>Doação Única</span>
+                        <span>Não Associado</span>
+                        <small style="font-size: 0.9rem; margin-top: 5px; opacity: 0.9;">A partir de R$10,00 - mensal ou única</small>
                     </button>
-                    <button class="type-btn" data-type="subscription">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Assinatura Mensal</span>
-                    </button>
+                </div>
+            </div>
+            
+            <!-- Payment Options Grid -->
+            <div class="payment-options-selector" id="payment-options">
+                <h2>Escolha a Forma de Pagamento</h2>
+                <div class="payment-options-grid">
+                    <div class="payment-option" data-payment="pix">
+                        <img src="assets/pix-logo.png" alt="PIX">
+                        <span>PIX</span>
+                    </div>
+                    <div class="payment-option" data-payment="credit">
+                        <img src="assets/accept-cards.png" alt="Cartão de Crédito">
+                        <span>Cartão de Crédito</span>
+                    </div>
+                    <div class="payment-option" data-payment="paypal">
+                        <img src="assets/paypal_logo.jpg" alt="PayPal">
+                        <span>PayPal</span>
+                    </div>
+                    <div class="payment-option" data-payment="bank">
+                        <i class="fas fa-university" style="font-size: 3rem; color: #0079BF; margin-bottom: 10px;"></i>
+                        <span>Transferência Bancária</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Métodos de Pagamento -->
             <div class="payment-methods">
-                <h2>Método de Pagamento</h2>
                 <!-- Segurança e Informações -->
             <div class="security-info">
                 <div class="security-badges">
@@ -837,7 +953,7 @@
                 </div>
             </div>
                 <!-- Cartão de Crédito (Stripe Payment Links) -->
-                <div class="payment-method" id="credit-method">
+                <div class="payment-method" id="credit-method" style="display: none;">
                     <div class="method-header" data-method="credit">
                         <div class="method-icon">
                             <i class="fas fa-credit-card"></i>
@@ -846,39 +962,39 @@
                             <h3>Cartão de Crédito</h3>
                             <p>Pagamento seguro via Stripe</p>
                         </div>
-                        <div class="method-select">
-                            <input type="radio" name="payment" value="credit" id="credit-radio" checked>
-                            <label for="credit-radio"></label>
-                        </div>
                     </div>
-                    <div class="method-content stripe-links" style="display: block;">
-                        <!-- Links para Doação Única -->
-                        <div class="single-payment-links">
-                            <h4>Doação Única</h4>
+                    <div class="method-content stripe-links">
+                        <!-- Links para Associados -->
+                        <div class="member-payment-links">
+                            <h4>Contribuição para Associados</h4>
                             <div class="donation-description">
-                                <p>Faça sua doação de qualquer valor através do nosso link seguro de pagamento. Você poderá escolher o valor desejado no momento do pagamento.</p>
+                                <p>Assinatura mensal de R$ 140,00 para associados efetivos. Pagamento recorrente mensal.</p>
                             </div>
                             <div class="custom-amount-link">
-                                <a href="https://buy.stripe.com/4gM6oG1P3aS39vab3X53O03" target="_blank" class="payment-link custom-link">
-                                    <span>Fazer Doação</span>
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <p class="custom-link-note">Clique para fazer sua doação com segurança</p>
-                            </div>
-                        </div>
-
-                        <!-- Links para Assinatura Mensal -->
-                        <div class="subscription-payment-links" style="display: none;">
-                            <h4>Assinatura Mensal</h4>
-                            <div class="payment-links-grid">
                                 <a href="https://buy.stripe.com/6oU8wObpD6BNbDic8153O00" target="_blank" class="payment-link subscription-link">
-                                    <span class="amount">Contribuição Associativa (para associados efetivos)</span>
+                                    <span class="amount">Contribuição Associativa</span>
                                     <span class="monthly-amount">R$ 140,00/mês</span>
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
-                                <a href="https://buy.stripe.com/5kQ8wO0KZe4f8r65JD53O05 " target="_blank" class="payment-link subscription-link">
-                                    <span class="amount">Contribuição Mensal Simbólica (para o público)</span>
-                                    <span class="monthly-amount">R$ 10,00/mês (por Qtd)</span>
+                                <p class="custom-link-note">Pagamento recorrente mensal seguro</p>
+                            </div>
+                        </div>
+
+                        <!-- Links para Não Associados -->
+                        <div class="non-member-payment-links" style="display: none;">
+                            <h4>Contribuição para Não Associados</h4>
+                            <div class="donation-description">
+                                <p>Escolha entre doação única ou assinatura mensal simbólica a partir de R$ 10,00.</p>
+                            </div>
+                            <div class="payment-links-grid" style="grid-template-columns: 1fr; gap: 15px;">
+                                <a href="https://buy.stripe.com/4gM6oG1P3aS39vab3X53O03" target="_blank" class="payment-link">
+                                    <span class="amount">Doação Única</span>
+                                    <span style="font-size: 0.9rem;">Qualquer valor</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://buy.stripe.com/5kQ8wO0KZe4f8r65JD53O05" target="_blank" class="payment-link subscription-link">
+                                    <span class="amount">Contribuição Mensal Simbólica</span>
+                                    <span class="monthly-amount">A partir de R$ 10,00/mês</span>
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -886,8 +1002,50 @@
                     </div>
                 </div>
                 
+                <!-- PayPal -->
+                <div class="payment-method" id="paypal-method" style="display: none;">
+                    <div class="method-header" data-method="paypal">
+                        <div class="method-icon">
+                            <i class="fab fa-paypal"></i>
+                        </div>
+                        <div class="method-info">
+                            <h3>PayPal</h3>
+                            <p>Pagamento seguro internacional</p>
+                        </div>
+                    </div>
+                    <div class="method-content">
+                        <div class="paypal-info">
+                            <h4>Doação via PayPal</h4>
+                            <div style="text-align: center; margin-bottom: 25px;">
+                                <img src="assets/paypal_logo.jpg" alt="PayPal Logo" style="max-width: 200px; height: auto;">
+                            </div>
+                            <div class="donation-description">
+                                <p>Faça sua doação através do PayPal de forma segura e protegida. Aceita cartões de crédito internacionais e conversão automática de moedas.</p>
+                            </div>
+                            <div class="custom-amount-link">
+                                <a href="https://www.paypal.com/donate/?hosted_button_id=CNH42HNQY9TW8" target="_blank" class="payment-link" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 30px; background: #0070ba; color: white; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;">
+                    <i class="fab fa-paypal" style="font-size: 1.5rem;"></i>
+                                    <span>Doar via PayPal</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <p class="custom-link-note">Clique para fazer sua doação com segurança via PayPal</p>
+                            </div>
+                            <div class="pix-instructions" style="margin-top: 30px;">
+                                <h4>Vantagens do PayPal:</h4>
+                                <ul style="list-style: disc; padding-left: 20px;">
+                                    <li>Aceita cartões de crédito internacionais</li>
+                                    <li>Conversão automática de moedas</li>
+                                    <li>Pagamento seguro e protegido</li>
+                                    <li>Disponível em todo o mundo</li>
+                                    <li>Proteção ao comprador</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- PIX -->
-                <div class="payment-method single-payment" id="pix-method">
+                <div class="payment-method" id="pix-method" style="display: none;">
                     <div class="method-header" data-method="pix">
                         <div class="method-icon">
                             <i class="fas fa-qrcode"></i>
@@ -896,12 +1054,8 @@
                             <h3>PIX</h3>
                             <p>Transferência instantânea e gratuita</p>
                         </div>
-                        <div class="method-select">
-                            <input type="radio" name="payment" value="pix" id="pix-radio">
-                            <label for="pix-radio"></label>
-                        </div>
                     </div>
-                    <div class="method-content" style="display: none;">
+                    <div class="method-content">
                         <div class="pix-container">
                             <div class="pix-info">
                                 <h4>Dados para PIX</h4>
@@ -945,7 +1099,7 @@
                 </div>
 
                 <!-- Transferência Bancária -->
-                <div class="payment-method single-payment" id="bank-method">
+                <div class="payment-method" id="bank-method" style="display: none;">
                     <div class="method-header" data-method="bank">
                         <div class="method-icon">
                             <i class="fas fa-university"></i>
@@ -954,12 +1108,8 @@
                             <h3>Transferência Bancária</h3>
                             <p>Depósito ou transferência tradicional</p>
                         </div>
-                        <div class="method-select">
-                            <input type="radio" name="payment" value="bank" id="bank-radio">
-                            <label for="bank-radio"></label>
-                        </div>
                     </div>
-                    <div class="method-content" style="display: none;">
+                    <div class="method-content">
                         <div class="bank-info">
                             <h4>Dados Bancários</h4>
                             <div class="bank-details">
@@ -1034,7 +1184,7 @@
             'use strict';
             
             // Variáveis globais
-            var isSubscription = false;
+            var currentUserType = 'member'; // 'member' ou 'non-member'
             
             // Aguardar DOM carregar
             function ready(fn) {
@@ -1048,64 +1198,77 @@
             ready(function() {
                 // Elementos do DOM
                 var typeButtons = document.querySelectorAll('.type-btn');
-                var singlePaymentMethods = document.querySelectorAll('.single-payment');
-                var singlePaymentLinks = document.querySelector('.single-payment-links');
-                var subscriptionPaymentLinks = document.querySelector('.subscription-payment-links');
+                var paymentOptions = document.querySelectorAll('.payment-option');
+                var paymentMethods = document.querySelectorAll('.payment-method');
                 
-                // Tipo de contribuição
+                // Tipo de contribuição (Associado/Não Associado)
                 for (var i = 0; i < typeButtons.length; i++) {
                     typeButtons[i].addEventListener('click', function() {
-                        // Remover active de todos
+                        // Remover active de todos os botões de tipo
                         for (var j = 0; j < typeButtons.length; j++) {
                             typeButtons[j].classList.remove('active');
                         }
                         this.classList.add('active');
                         
-                        isSubscription = this.getAttribute('data-type') === 'subscription';
+                        // Atualizar tipo de usuário
+                        currentUserType = this.getAttribute('data-type');
                         
-                        // Mostrar/ocultar métodos de pagamento
-                        for (var k = 0; k < singlePaymentMethods.length; k++) {
-                            singlePaymentMethods[k].style.display = isSubscription ? 'none' : 'block';
+                        // Resetar seleção de método de pagamento
+                        for (var k = 0; k < paymentOptions.length; k++) {
+                            paymentOptions[k].classList.remove('active');
                         }
                         
-                        // Alternar entre links
-                        if (singlePaymentLinks && subscriptionPaymentLinks) {
-                            singlePaymentLinks.style.display = isSubscription ? 'none' : 'block';
-                            subscriptionPaymentLinks.style.display = isSubscription ? 'block' : 'none';
-                        }
-                        
-                        // Se for assinatura, marcar cartão de crédito
-                        if (isSubscription) {
-                            var creditRadio = document.getElementById('credit-radio');
-                            var creditContent = document.querySelector('#credit-method .method-content');
-                            if (creditRadio) creditRadio.checked = true;
-                            if (creditContent) creditContent.style.display = 'block';
+                        // Esconder todos os métodos de pagamento
+                        for (var l = 0; l < paymentMethods.length; l++) {
+                            paymentMethods[l].style.display = 'none';
                         }
                     });
                 }
                 
-                // Seleção de método de pagamento
-                var methodHeaders = document.querySelectorAll('.method-header');
-                for (var l = 0; l < methodHeaders.length; l++) {
-                    methodHeaders[l].addEventListener('click', function() {
-                        var method = this.getAttribute('data-method');
-                        var radio = document.getElementById(method + '-radio');
+                // Seleção de opções de pagamento (PIX, Cartão, PayPal, Banco)
+                for (var m = 0; m < paymentOptions.length; m++) {
+                    paymentOptions[m].addEventListener('click', function() {
+                        var paymentType = this.getAttribute('data-payment');
                         
-                        // Desmarcar todos
-                        var allRadios = document.querySelectorAll('input[name="payment"]');
-                        var allContents = document.querySelectorAll('.method-content');
-                        
-                        for (var m = 0; m < allRadios.length; m++) {
-                            allRadios[m].checked = false;
-                        }
-                        for (var n = 0; n < allContents.length; n++) {
-                            allContents[n].style.display = 'none';
+                        // Remover active de todas as opções
+                        for (var n = 0; n < paymentOptions.length; n++) {
+                            paymentOptions[n].classList.remove('active');
                         }
                         
-                        // Marcar selecionado
-                        if (radio) radio.checked = true;
-                        var content = this.nextElementSibling;
-                        if (content) content.style.display = 'block';
+                        // Marcar a opção selecionada como ativa
+                        this.classList.add('active');
+                        
+                        // Esconder todos os métodos
+                        for (var o = 0; o < paymentMethods.length; o++) {
+                            paymentMethods[o].style.display = 'none';
+                        }
+                        
+                        // Mostrar o método selecionado
+                        var selectedMethod = document.getElementById(paymentType + '-method');
+                        if (selectedMethod) {
+                            selectedMethod.style.display = 'block';
+                            
+                            // Se for cartão de crédito, mostrar os links corretos
+                            if (paymentType === 'credit') {
+                                var memberLinks = selectedMethod.querySelector('.member-payment-links');
+                                var nonMemberLinks = selectedMethod.querySelector('.non-member-payment-links');
+                                
+                                if (memberLinks && nonMemberLinks) {
+                                    if (currentUserType === 'member') {
+                                        memberLinks.style.display = 'block';
+                                        nonMemberLinks.style.display = 'none';
+                                    } else {
+                                        memberLinks.style.display = 'none';
+                                        nonMemberLinks.style.display = 'block';
+                                    }
+                                }
+                            }
+                        }
+                        
+                        // Scroll suave até o método de pagamento
+                        if (selectedMethod) {
+                            selectedMethod.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
                     });
                 }
             });
